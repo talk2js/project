@@ -13,11 +13,14 @@
 @import url("../../dojo-release-1.10.0/dgrid/css/skins/tundra.css");
 @import url("./miniplayer.css");
 @import url("./shortcut.css");
+@import url("./menubar.css");
+@import url("./tabbutton.css");
 
 html,body {
 	width: 100%;
 	height: 100%;
 	margin: 0;
+	padding: 0;
 	overflow: hidden;
 }
 

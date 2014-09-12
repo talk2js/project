@@ -13,15 +13,18 @@ define([
     "dijit/layout/ContentPane",
     "dijit/_WidgetBase",
     "dijit/_TemplatedMixin",
+    "dijit/_WidgetsInTemplateMixin",
     
-    "dojo/text!./MenuBar.html"
+    "dojo/text!./TabButton.html"
 ], function (declare, lang, dom, on, Memory, domStyle, domConstruct, domGeom, require, 
-		registry, ContentPane, _WidgetBase, _TemplatedMixin, template) {
+		registry, ContentPane, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, template) {
     
-	return declare([_WidgetBase, _TemplatedMixin], {
+	return declare([_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin], {
 		
         templateString: template,
         	
+        widgetsInTemplate: true,
+        
 		postMixInProperties: function(){
 		},
 		

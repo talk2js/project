@@ -15,7 +15,10 @@ require([
 	"dijit/layout/TabContainer",
 	"dijit/layout/ContentPane",
 	"dijit/layout/AccordionContainer",
-	"dijit/layout/BorderContainer"
+	"dijit/layout/BorderContainer",
+	
+	"talk2js/component/TabButton",
+	"talk2js/component/MenuBar"
 ], function(AppLoader, ready){
 
 	ready(function(){
