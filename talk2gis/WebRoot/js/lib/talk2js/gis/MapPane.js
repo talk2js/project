@@ -64,7 +64,7 @@ define([
          * MapPaneDock
          */
         dock: null,
-        isDock: false,
+        isDock: true,
         
         /**
          * 保存每次右键点击地图的坐标（相对地图的屏幕坐标，不是经纬度）

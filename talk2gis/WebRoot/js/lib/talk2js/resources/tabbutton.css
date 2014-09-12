@@ -2,10 +2,11 @@
 	float: left;
 	display: block;
 	margin-left: 13px;
-	margin-top: 4px;
+	margin-top: 2px;
 }
 
 .tabbutton button {
+	cursor: pointer;
 	outline: none;
 	height: 24px;
 	text-align: center;
@@ -13,9 +14,9 @@
 	font-family: "微软雅黑";
 	font-size: 12px;
 	color: #fff;
-	border: 1px solid rgba(0, 0, 0, 0.8);
-	border-radius: 1px;
-	background: linear-gradient(rgba(39, 40, 34, 0.7) 0%, rgba(106, 107, 109, 0.7) 100%);
+	border: 1px solid #e0e0e0;
+	border-radius: 0px;
+	background: linear-gradient(rgba(39, 40, 34, 0.8) 0%, rgba(106, 107, 109, 0.8) 100%);
 }
 
 .tabbutton button::-moz-focus-inner {
@@ -25,6 +26,8 @@
 .tabbutton img {
 	/* visibility: hidden; */
 	visibility: visible;
-	margin-left: -9px;
-	margin-bottom: 6px;
+	margin-left: -10px;
+	margin-bottom: 4px;
+	cursor: pointer;
 }
+
