@@ -15,14 +15,15 @@ define([
 	return declare([], {
 
 		constructor: function(args) {
-			var node1 = dom.byId("menuBar");
+			var node1 = dom.byId("header");
 			var node1p = domGeom.position(node1);
-			var node2 = dom.byId("paneController");
+			var node2 = dom.byId("footer");
 			var node2p = domGeom.position(node2);
 			
 			var height = document.body.clientHeight - node1p.h - node2p.h;
             var paneContainer = new StackContainer({
-                style: "height:" + height + "px; width:100%; margin-top:0px;"
+                style: "height:" + height + "px; width:100%; position:absoulte; " +
+            		"z-index:10; left:0px; top:" + node1p.h + "px;"
             }, "paneContainer");
             paneContainer.startup();
             
