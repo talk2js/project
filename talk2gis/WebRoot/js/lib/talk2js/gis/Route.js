@@ -8,8 +8,8 @@ define([
     "dijit/MenuItem",
     "dijit/MenuSeparator",
 	
-	"china317gis/rest/mapabc/route",
-	"china317gis/util/mercator"
+	"./rest/mapabc/route",
+	"./util/mercator"
 ], function(declare, lang, require, on, topic, MenuItem, MenuSeparator, route, mercator) {
 
 	var obj = declare([], {

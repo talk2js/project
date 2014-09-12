@@ -7,8 +7,8 @@
     "dijit/Menu",
     "dijit/MenuItem",
 
-    "china317gis/openlayers/control/ZoomBoxControl",
-    "china317gis/util/mercator"
+    "./openlayers/control/ZoomBoxControl",
+    "./util/mercator"
 ], function (declare, lang, topic, popup, Menu, MenuItem, ZoomBoxControl, mercator) {
     
 	return declare([Menu], {

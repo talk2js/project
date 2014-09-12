@@ -4,9 +4,9 @@
 	
     return OpenLayers.Class(OpenLayers.Control.OverviewMap, {
     	
-        MAXIMIZE_SWITCHER: require.toUrl('../../resources/images/overview/overview-map-expand.png'),
+        MAXIMIZE_SWITCHER: require.toUrl('../../../resources/images/overview/overview-map-expand.png'),
         
-        MINIMIZE_SWITCHER: require.toUrl('../../resources/images/overview/overview-map-collapse.png'),
+        MINIMIZE_SWITCHER: require.toUrl('../../../resources/images/overview/overview-map-collapse.png'),
 
         draw: function() {
             OpenLayers.Control.prototype.draw.apply(this, arguments);

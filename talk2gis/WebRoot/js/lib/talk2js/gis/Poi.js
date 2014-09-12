@@ -20,10 +20,10 @@ define([
     "dgrid/ColumnSet",
     "dgrid/util/mouse",
     
-    "china317gis/openlayers/control/ZoomBoxControl",
-    "china317gis/util/popup",
-    "china317gis/util/mercator",
-	"china317gis/rest/mapabc/poi"
+    "./openlayers/control/ZoomBoxControl",
+    "./util/popup",
+    "./util/mercator",
+	"./rest/mapabc/poi"
 ], function(declare, lang, Deferred, aspect, Memory, require, TextBox, MenuItem, MenuSeparator, 
 		TooltipDialog, OnDemandGrid, tree, editor, Keyboard, Selection, selector, 
 			ColumnSet, mouse, ZoomBoxControl, popup, mercator, poi) {

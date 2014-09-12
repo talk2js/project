@@ -16,8 +16,8 @@ define([
     "dgrid/ColumnSet",
     "dgrid/util/mouse",
 	
-    "china317gis/util/mercator",
-	"china317gis/rest/mapabc/poi"
+    "./util/mercator",
+	"./rest/mapabc/poi"
 ], function(declare, lang, Deferred, require, all, aspect, Memory, OnDemandGrid, tree, 
 		editor, Keyboard, Selection, selector, ColumnSet, mouse, mercator, poi) {
 

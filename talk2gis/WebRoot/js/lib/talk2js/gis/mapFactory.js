@@ -14,15 +14,15 @@ define([
     "dojo/dom-style",
     "dojo/aspect",
 
-    "china317gis/openlayers/control/Overview",
-    "china317gis/openlayers/control/ZIndexManagerControl",
-    "china317gis/openlayers/control/PanZoomBar",
-    "china317gis/openlayers/control/MousePosition",
-	"china317gis/openlayers/layer/SoGou",
-	"china317gis/openlayers/layer/Tianditu",
-	"china317gis/openlayers/layer/QQ",
-	"china317gis/openlayers/layer/MapABC",
-	"china317gis/openlayers/layer/Google"
+    "./openlayers/control/Overview",
+    "./openlayers/control/ZIndexManagerControl",
+    "./openlayers/control/PanZoomBar",
+    "./openlayers/control/MousePosition",
+	"./openlayers/layer/SoGou",
+	"./openlayers/layer/Tianditu",
+	"./openlayers/layer/QQ",
+	"./openlayers/layer/MapABC",
+	"./openlayers/layer/Google"
 ], function (declare, array, lang, ready, on, has, domConstruct, domStyle, aspect, 
 		Overview, ZIndexManagerControl, PanZoomBar, MousePosition, SoGou, Tianditu, 
 			QQ, MapABC, Google) {

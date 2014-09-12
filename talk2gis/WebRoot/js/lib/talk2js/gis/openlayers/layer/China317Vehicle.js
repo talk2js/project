@@ -1,6 +1,6 @@
 define([
 	"dojo/io-query",
-	"china317gis/util/mercator"
+	"../../util/mercator"
 ], function(ioQuery, mercator) {
 
 	OpenLayers.Layer.China317Vehicle = OpenLayers.Class(OpenLayers.Layer.XYZ, {

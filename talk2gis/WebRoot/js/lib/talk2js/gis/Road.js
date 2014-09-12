@@ -21,9 +21,9 @@ define([
     "dgrid/ColumnSet",
     "dgrid/util/mouse",
 	
-    "china317gis/util/popup",
-    "china317gis/util/mercator",
-	"china317gis/rest/mapabc/road"
+    "./util/popup",
+    "./util/mercator",
+	"./rest/mapabc/road"
 ], function(declare, lang, require, domConstruct, Memory, aspect, domGeom, Deferred, 
 		TooltipDialog, FloatingPane, OnDemandGrid, tree, editor, Keyboard, 
 			Selection, selector, ColumnSet, mouse, popup, mercator, road) {

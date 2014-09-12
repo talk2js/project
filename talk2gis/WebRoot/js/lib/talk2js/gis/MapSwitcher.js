@@ -22,11 +22,11 @@
         
         nodes: null,
         
-        mapabcImagePath: require.toUrl("./resources/images/mapswitcher/mapabc.png"),
+        mapabcImagePath: require.toUrl("../resources/images/mapswitcher/mapabc.png"),
         
-        googleImagePath: require.toUrl("./resources/images/mapswitcher/google.png"),
+        googleImagePath: require.toUrl("../resources/images/mapswitcher/google.png"),
         
-        qqImagePath: require.toUrl("./resources/images/mapswitcher/qq.png"),
+        qqImagePath: require.toUrl("../resources/images/mapswitcher/qq.png"),
         
         highIndex: 100,
         

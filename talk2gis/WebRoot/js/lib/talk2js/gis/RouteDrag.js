@@ -10,9 +10,9 @@ define([
     "dijit/MenuSeparator",
 	"dijit/registry",
 	
-	"china317gis/openlayers/control/RouteDragControl",
-	"china317gis/rest/mapabc/route",
-	"china317gis/util/mercator"
+	"./openlayers/control/RouteDragControl",
+	"./rest/mapabc/route",
+	"./util/mercator"
 ], function(declare, lang, require, on, xhr, Deferred, MenuItem, MenuSeparator, registry, 
 		RouteDragControl, route, mercator) {
 

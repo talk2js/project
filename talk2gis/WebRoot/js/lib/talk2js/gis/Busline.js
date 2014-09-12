@@ -18,9 +18,9 @@ define([
     "dgrid/ColumnSet",
     "dgrid/util/mouse",
 	
-    "china317gis/util/popup",
-	"china317gis/util/mercator",
-	"china317gis/rest/mapabc/bus"
+    "./util/popup",
+	"./util/mercator",
+	"./rest/mapabc/bus"
 ], function(declare, lang, Deferred, aspect, Memory, domGeom, require, TooltipDialog, 
 		OnDemandGrid, tree, editor, Keyboard, Selection, selector, ColumnSet, 
 			mouse, popup, mercator, bus) {

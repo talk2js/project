@@ -1,5 +1,5 @@
 ﻿define([
-	"china317gis/util/mercator"
+	"../../util/mercator"
 ], function (mercator) {
 
     var component = OpenLayers.Class(OpenLayers.Control.MousePosition, {
