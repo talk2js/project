@@ -1,0 +1,242 @@
+@charset "utf-8";
+
+@import url("../../dojo-release-1.10.0/dijit/themes/claro/claro.css");
+@import url("../../dojo-release-1.10.0/dojo/resources/dojo.css");
+@import url("../../dojo-release-1.10.0/dojox/layout/resources/FloatingPane.css");
+@import url("../../dojo-release-1.10.0/dojox/layout/resources/ExpandoPane.css");
+@import url("../../dojo-release-1.10.0/dojox/layout/resources/ToggleSplitter.css");
+@import	url("../../dojo-release-1.10.0/dojox/grid/enhanced/resources/claro/EnhancedGrid.css");
+@import	url("../../dojo-release-1.10.0/dojox/grid/enhanced/resources/EnhancedGrid_rtl.css");
+@import url("../../dojo-release-1.10.0/dojox/widget/Calendar/Calendar.css");
+/* @import url("../../dojo-release-1.10.0/cbtree/themes/claro/claro.css"); */
+@import url("../../dojo-release-1.10.0/dgrid/css/dgrid.css");
+@import url("../../dojo-release-1.10.0/dgrid/css/skins/claro.css");
+@import url("./miniplayer.css");
+@import url("./shortcut.css");
+
+html,body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	overflow: hidden;
+}
+
+.claro .dijitDialogPaneContent {
+	background: #ffffff repeat-x top left;
+	border-top: 1px solid #759dc0;
+	padding: 10px 8px;
+	position: relative;
+	height: auto;
+}
+
+/* .claro .dijitTabContainerTop-tabs .dijitTab {
+    border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+} */
+
+.addIcon
+{
+    background: url(./images/add.png);
+    width: 16px;
+    height: 16px;
+}
+
+/* 弹出日期选择 */
+.dojoxCalendar .dijitCalendarDateTemplate {
+	border: 0px none !important; 
+}
+tr.dojoxCal-MY-btns {
+	background:   url(../../dojo/dijit/themes/soria/images/tabBottomHoverC.gif) repeat-x scroll 0px -21px;
+}
+.dojoxCalendarHeader {
+	background: #BED7F0 url(../../dojo/dijit/themes/soria/images/titleBar.png) repeat-x scroll center top;
+}
+.dojoxCalendar .dojoxCalendarFooter {
+	border-top: 0px none;
+	padding-top: 5px;
+	background: white url(../../dojo/dijit/themes/soria/images/titleBar.png) repeat-x scroll center top
+}
+.dojoxCalendar td.dijitCalendarSelectedDate {
+	background-color: #B9CBF1 !important;
+	color: black !important;
+	border: 1px solid #4B5AAA !important;
+}
+.dojoxCalendar .dijitCalendarSelectedDate div {
+	
+	background-color: #B9CBF1 !important;
+	border: none  !important;
+}
+.dojoxCal-MY-labels .dijitCalendarSelectedDate div {
+	padding-top: 4px;
+	padding-bottom: 3px;
+}
+.dojoxCal-MY-labels .dojoxCal-MY-M-last {
+	border-right: 1px #B9CBF1 solid;
+} 
+
+.china317gisGrid {
+	height: 24em;
+}
+
+/* 地图右键菜单 */
+.extentQueryIcon {
+	background: url(./images/contextmenu/extent_query.png);
+	width: 16px;
+	height: 16px;
+}
+
+.lineMeasureIcon {
+	background: url(./images/contextmenu/measure-line.png);
+	width: 16px;
+	height: 16px;
+}
+
+.areaMeasureIcon {
+	background: url(./images/contextmenu/measure-area.png);
+	width: 16px;
+	height: 16px;
+}
+
+.fullExtentIcon {
+	background: url(./images/contextmenu/full-extent.gif);
+	width: 16px;
+	height: 16px;
+}
+
+.zoomInIcon {
+	background: url(./images/contextmenu/zoom_in.gif);
+	width: 16px;
+	height: 16px;
+}
+
+.zoomOutIcon {
+	background: url(./images/contextmenu/zoom_out.gif);
+	width: 16px;
+	height: 16px;
+}
+
+.cleanMapIcon {
+	background: url(./images/contextmenu/clear.png);
+	width: 16px;
+	height: 16px;
+}
+
+/* 地图鹰眼图 */
+.olControlOverviewMap .olControlOverviewMapElement {
+	padding: 3px;
+	background: white;
+	border: 1px solid #4E84DA;
+}
+
+.olControlOverviewMap .olControlOverviewMapElement .olMap {
+	border: 1px solid #4E84DA;
+}
+
+.olControlOverviewMap .olControlOverviewMapMinimizeButton,.olControlOverviewMap .olControlOverviewMapMaximizeButton
+	{
+	right: 0;
+	bottom: 0;
+	z-index: 1000;
+}
+
+/* 公交路线查询结果面板 */
+.bussline-resultPane {
+	height: 160px;
+}
+
+.bussline-childrenResultPane {
+	height: 230px;
+}
+
+/* 公司图标 */
+.logoIcon {
+	background: url(./images/317.gif);
+	width: 31px;
+	height: 16px;
+}
+
+/* FloatingPaneDock */
+.mapPaneDock {
+	display: block;
+	border: 0px;
+	position: absolute;
+	top: 170px;
+	right: 15px;
+	width: 100px;
+	height: 380px;
+	z-index: 999;
+	padding: 0;
+	margin: 0;
+	background: transparent;
+}
+
+.mapPaneDockList {
+	padding: 0px;
+	margin: 0px;
+}
+
+.mapPaneDockNode {
+	background: url('./images/panedock/dock_s.png') repeat-x scroll left;
+	border: 1px solid #43a3fe;
+	/*border-radius: 2px 2px 2px 2px;*/
+	cursor: pointer;
+	height: 20px;
+	list-style: none outside none;
+	margin-top: 8px;
+	padding-top: 3px;
+	padding-left: 5px;
+	width: 85px;
+}
+
+.mapPaneDockRestoreButton {
+	background: url('./images/panedock/tag6.png') no-repeat center center;
+	width: 16px;
+	height: 16px;
+	overflow: hidden;
+	float: left;
+	margin-left: 2px;
+	margin-top: 1px;
+}
+
+.mapPaneDockTitleNode {
+	overflow: hidden;
+	margin-left: 4px;
+	font-size: 13px;
+	color: #fff;
+}
+
+/* MapFloatingPane */
+.mapFloatingPane {
+	background-color: #fff;
+	position: relative;
+	border: 1px solid #dedede;
+	overflow: hidden;
+	-webkit-box-shadow: 0px 5px 10px #adadad;
+}
+
+.mapFloatingPaneTitle {
+	background: #f5f5f5 repeat-x bottom left;
+	border: 1px solid #bfbfbf;
+	padding: 4px 4px 2px 4px;
+	cursor: move;
+	white-space: nowrap;
+}
+
+.mapFloatingPaneMinimizeIcon {
+	background: url('./images/floatingpane/full.gif') no-repeat -15px 0px;
+	width: 15px;
+	height: 15px;
+	margin: 0px 4px;
+	overflow: hidden;
+	float: right;
+	cursor: pointer;
+}
+
+.mapFloatingPaneCloseIcon {
+	background: url('./images/floatingpane/full.gif') no-repeat -60px 0px;
+	width: 15px;
+	height: 15px;
+	overflow: hidden;
+	float: right;
+	cursor: pointer;
+}
