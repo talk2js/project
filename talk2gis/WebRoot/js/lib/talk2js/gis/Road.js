@@ -21,7 +21,7 @@ define([
     "dgrid/ColumnSet",
     "dgrid/util/mouse",
 	
-    "./util/popup",
+    "dijit/popup",
     "./util/mercator",
 	"./rest/mapabc/road"
 ], function(declare, lang, require, domConstruct, Memory, aspect, domGeom, Deferred, 

@@ -21,7 +21,6 @@
 .mapPaneDockNode {
 	background: url('./images/panedock/dock_s.png') repeat-x scroll left;
 	border: 1px solid #43a3fe;
-	/*border-radius: 2px 2px 2px 2px;*/
 	cursor: pointer;
 	height: 20px;
 	list-style: none outside none;
@@ -54,17 +53,17 @@
 	overflow: hidden;
 	position: relative;
 	border: 1px solid #cbd0d6;
-	border-radius: 4px;
+	border-radius: 3px;
 	box-shadow: 0px 5px 10px #adadad;
 }
 
 .mapFloatingPaneTitle {
 	font-family: "微软雅黑";
-	font-size: 14px;
+	font-size: 13px;
 	height: 25px;
-	padding-top: 5px;
+	padding-top: 9px;
 	padding-left: 10px;
-	padding-bottom: 4px;
+	padding-bottom: 3px;
 	color: #fff;
 	cursor: move;
 }
@@ -77,15 +76,15 @@
 }
 
 .mapFloatingPaneContent {
-	height:100%;
-	width:100%;
+	height: 100%;
+	width: 100%;
 }
 
 .mapFloatingPaneMinimizeIcon {
 	background: url('./images/floatingpane/min.png');
 	width: 24px;
 	height: 24px;
-	overflow: hidden;
+	margin-top: -2px;
 	float: right;
 	cursor: pointer;
 }
@@ -94,18 +93,18 @@
 	background: url('./images/floatingpane/close.png');
 	width: 24px;
 	height: 24px;
-	overflow: hidden;
+	margin-top: -2px;
 	margin-right: 7px;
 	float: right;
 	cursor: pointer;
 }
 
 .mapFloatingResizeHandle {
-	background:url('./images/floatingpane/resize.png') no-repeat bottom right;
-	position:absolute; 
-	right:0; 
-	bottom:0; 	
-	width:16px;
-	height:16px; 
-	cursor:nw-resize;
+	background: url('./images/floatingpane/resize.png');
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 16px;
+	height: 16px;
+	cursor: nw-resize;
 }

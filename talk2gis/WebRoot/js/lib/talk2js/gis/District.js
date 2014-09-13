@@ -17,7 +17,7 @@ define([
     "dgrid/ColumnSet",
 	"dgrid/util/mouse",
    
-    "./util/popup",
+    "dijit/popup",
     "./util/mercator",
 	"./rest/mapabc/poi"
 ], function(declare, lang, Deferred, aspect, Memory, require, TooltipDialog, 

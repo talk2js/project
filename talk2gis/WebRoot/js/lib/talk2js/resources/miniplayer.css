@@ -1,172 +1,174 @@
 .mini-player {
-    width: 475px;
-    height: 56px;
-    background: url(images/player/bg-s.png) no-repeat;
-    position: absolute;
+	width: 475px;
+	height: 56px;
+	background: url(images/player/bg-s.png) no-repeat;
+	position: absolute;
 }
 
 .mini-player .shijianzhou {
-    position: absolute;
-    left:116px;
-    top:24px;
-    width:240px;
-    height:4px;
-    /*background: #000;
+	position: absolute;
+	left: 116px;
+	top: 24px;
+	width: 240px;
+	height: 4px;
+	/*background: #000;
     cursor: pointer;*/
 }
 
 .mini-player .jindutiao {
-    height: 8px;
-    background: #191919;
+	height: 8px;
+	background: #191919;
 }
 
 .mini-player .interval {
-    position: absolute;
- 	left: 47px;
-  	top: 90px;
-    width: 94px;
-    font-size: 12px;
-    font-weight: bold;
-    color: #cce9ff;
+	position: absolute;
+	left: 47px;
+	top: 90px;
+	width: 94px;
+	font-size: 12px;
+	font-weight: bold;
+	color: #cce9ff;
 }
 
 .mini-player .bofang {
-    position: absolute;
- 	left: 0px;
-  	top:0px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
 }
 
 .mini-player .backward {
-    position: absolute;
-    left:0px;
-    top:10px;
-    width: 33px;
-    height: 33px;
-    background: url(images/player/kuaitui-s.png) no-repeat;
-    cursor: pointer;
+	position: absolute;
+	left: 0px;
+	top: 10px;
+	width: 33px;
+	height: 33px;
+	background: url(images/player/kuaitui-s.png) no-repeat;
+	cursor: pointer;
 }
 
 .mini-player .backward:hover {
-    background: url(images/player/kuaitui-s.png) -33px 0px no-repeat;
+	background: url(images/player/kuaitui-s.png) -33px 0px no-repeat;
 }
 
 .mini-player .play {
-    position: absolute;
-    left:28px;
-    top:0px;
-    width: 56px;
-    height: 57px;
-    background: url(images/player/play-s.png)  no-repeat;
-    cursor: pointer;
+	position: absolute;
+	left: 28px;
+	top: 0px;
+	width: 56px;
+	height: 57px;
+	background: url(images/player/play-s.png) no-repeat;
+	cursor: pointer;
 }
 
 .mini-player .play:hover {
-    background: url(images/player/play-s.png) -56px 0px  no-repeat;
+	background: url(images/player/play-s.png) -56px 0px no-repeat;
 }
 
 .mini-player .pause {
-    float: left;
-    width: 56px;
-    height: 57px;
-    background: url(images/player/pause-s.png)  -56px 0px no-repeat;
-    cursor: pointer;
+	float: left;
+	width: 56px;
+	height: 57px;
+	background: url(images/player/pause-s.png) -56px 0px no-repeat;
+	cursor: pointer;
 }
 
 .mini-player .pause:hover {
-    background: url(images/player/pause-s.png) -56px 0px  no-repeat;
+	background: url(images/player/pause-s.png) -56px 0px no-repeat;
 }
 
 .mini-player .forward {
-    position: absolute;
-    left:78px;
-    top:10px;
-    width: 33px;
-    height: 33px;
-    background: url(images/player/kuaijin-s.png) no-repeat;
-    cursor: pointer;
+	position: absolute;
+	left: 78px;
+	top: 10px;
+	width: 33px;
+	height: 33px;
+	background: url(images/player/kuaijin-s.png) no-repeat;
+	cursor: pointer;
 }
 
 .mini-player .forward:hover {
-    background: url(images/player/kuaijin-s.png) -33px 0px  no-repeat;
+	background: url(images/player/kuaijin-s.png) -33px 0px no-repeat;
 }
 
 .mini-player .status-menu {
-     cursor: pointer;
- }
+	cursor: pointer;
+}
 
 .mini-player .current-time {
-    position: absolute;
-    left:360px;
-    top:18px;
-    color:#fff;
-}
-.mini-player .x1 {
-    position: absolute;
-    left:415px;
-    top:18px;
-    color:#fff;
-    cursor: pointer;
-}
-.mini-player .x2 {
-    position: absolute;
-    left:433px;
-    top:18px;
-    color:#fff;
-    cursor: pointer;
-}
-.mini-player .x4 {
-    position: absolute;
-    left:448px;
-    top:18px;
-    color:#fff;
-    cursor: pointer;
+	position: absolute;
+	left: 360px;
+	top: 18px;
+	color: #fff;
 }
 
-.mini-player .dijitSliderDecrementIconH ,.mini-player .dijitSliderIncrementIconH {
-    display: none;
+.mini-player .x1 {
+	position: absolute;
+	left: 415px;
+	top: 18px;
+	color: #fff;
+	cursor: pointer;
+}
+
+.mini-player .x2 {
+	position: absolute;
+	left: 433px;
+	top: 18px;
+	color: #fff;
+	cursor: pointer;
+}
+
+.mini-player .x4 {
+	position: absolute;
+	left: 448px;
+	top: 18px;
+	color: #fff;
+	cursor: pointer;
+}
+
+.mini-player .dijitSliderDecrementIconH,.mini-player .dijitSliderIncrementIconH
+	{
+	display: none;
 }
 
 .mini-player .dijitSliderImageHandleH {
-    width: 37px;
-    height: 37px;
-    top: -17px;
-    background-image: url("images/player/dot.png");
+	width: 37px;
+	height: 37px;
+	top: -17px;
+	background-image: url("images/player/dot.png");
 }
 
 .mini-player .dijitSliderFocused .dijitSliderImageHandleH {
-    background-position: 0 0;
+	background-position: 0 0;
 }
 
 .mini-player .dijitSliderActive .dijitSliderImageHandleH {
-    background-position: 0 0;
+	background-position: 0 0;
 }
 
 .mini-player .dijitSliderHover .dijitSliderImageHandleH {
-    background-position: 0 0;
+	background-position: 0 0;
 }
 
-.mini-player .dijitSlider .dijitSliderProgressBarH,
-.mini-player .dijitSlider .dijitSliderLeftBumper,
-.mini-player .dijitSlider .dijitSliderFocused .dijitSliderLeftBumper {
-    background-image: inherit;
-    background-color: #60E6F1;
-    border-color: #60E6F1;
-    box-shadow: inherit;
+.mini-player .dijitSlider .dijitSliderProgressBarH,.mini-player .dijitSlider .dijitSliderLeftBumper,.mini-player .dijitSlider .dijitSliderFocused .dijitSliderLeftBumper
+	{
+	background-image: inherit;
+	background-color: #60E6F1;
+	border-color: #60E6F1;
+	box-shadow: inherit;
 }
 
-.mini-player .dijitSlider .dijitSliderRemainingBarH,
-.mini-player .dijitSlider .dijitSliderRightBumper,
-.mini-player .dijitSlider .dijitSliderFocused .dijitSliderRightBumper {
-    background-color: black;
-    border-color: black;
+.mini-player .dijitSlider .dijitSliderRemainingBarH,.mini-player .dijitSlider .dijitSliderRightBumper,.mini-player .dijitSlider .dijitSliderFocused .dijitSliderRightBumper
+	{
+	background-color: black;
+	border-color: black;
 }
 
 .mini-player .tobig {
-    position: absolute;
-    left:416px;
-    top:20px;
-    width:11px;
-    height:10px;
-    cursor: pointer;
-    background: url(images/player/tobig.png) 0px 0px  no-repeat;
+	position: absolute;
+	left: 416px;
+	top: 20px;
+	width: 11px;
+	height: 10px;
+	cursor: pointer;
+	background: url(images/player/tobig.png) 0px 0px no-repeat;
 }

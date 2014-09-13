@@ -1,7 +1,68 @@
 .menubarIcon {
 	cursor: pointer;
 	float: left;
+	margin-top: 0px;
 	margin-left: 27px;
 	width: 32px;
 	height: 32px;
+}
+
+.dropDownMenu {
+	position: absolute;
+	z-index: 9999;
+	left: 150px;
+	top: 150px;
+}
+
+.dropDownMenu .dropDownMenuConnector {
+	background-image: url("./images/menubar/tooltip-2.png");
+	width: 66px;
+	height: 14px;
+	left: 0px;
+}
+
+.dropDownMenu .dropDownContainer {
+	background-color: #FFF;
+	background-image: linear-gradient(rgba(56, 56, 56, 0.8) 0%, rgba(60, 60, 60, 0.6) 100%);
+	background-color: transparent;
+	background-position: center bottom;
+	border: 1px solid #fff;
+	padding-left: 0;
+	padding-right: 0;
+	border-radius: 4px;
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+	font-size: 13px;
+	color: #000;
+}
+
+.claro .dropDownMenu .dijitMenu .dijitMenuItem td {
+	padding: 5px;
+	padding-right: 0px;
+	border-width: 0;
+	border-color: transparent;
+}
+
+.claro .dropDownMenu .dijitMenuItem {
+	color: #FFFFFF;
+	display: block;
+	padding: 0 10px;
+	padding-right: 0px;
+}
+
+.claro .dropDownMenu .dijitMenu {
+	background: linear-gradient(rgba(56, 56, 56, 0.6) 0%,
+		rgba(60, 60, 60, 0.5) 100%);
+}
+
+.claro .dropDownMenu .dijitMenuItemSelected,
+.claro .dropDownMenu .dijitMenuItemHover
+	{
+	color: #000;
+}
+
+.claro .dropDownMenu .dijitMenu .dijitMenuItemHover td,
+.claro .dropDownMenu .dijitMenu .dijitMenuItemSelected td
+	{
+	background: none;
+}
 }

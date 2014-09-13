@@ -18,7 +18,7 @@ require([
 	"dijit/layout/BorderContainer",
 	
 	"talk2js/component/TabButton",
-	"talk2js/component/MenuBar"
+	"talk2js/component/menubar/MenuBar"
 ], function(AppLoader, ready){
 
 	ready(function(){
