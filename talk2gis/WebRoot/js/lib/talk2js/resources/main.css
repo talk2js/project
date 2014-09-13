@@ -1,16 +1,16 @@
 @charset "utf-8";
 
-@import url("../../dojo-release-1.10.0/dijit/themes/tundra/tundra.css");
+@import url("../../dojo-release-1.10.0/dijit/themes/claro/claro.css");
 @import url("../../dojo-release-1.10.0/dojo/resources/dojo.css");
 @import url("../../dojo-release-1.10.0/dojox/layout/resources/FloatingPane.css");
 @import url("../../dojo-release-1.10.0/dojox/layout/resources/ExpandoPane.css");
 @import url("../../dojo-release-1.10.0/dojox/layout/resources/ToggleSplitter.css");
-@import url("../../dojo-release-1.10.0/dojox/grid/enhanced/resources/tundra/EnhancedGrid.css");
-@import url("../../dojo-release-1.10.0/dojox/grid/enhanced/resources/EnhancedGrid_rtl.css");
+@import	url("../../dojo-release-1.10.0/dojox/grid/enhanced/resources/claro/EnhancedGrid.css");
+@import	url("../../dojo-release-1.10.0/dojox/grid/enhanced/resources/EnhancedGrid_rtl.css");
 @import url("../../dojo-release-1.10.0/dojox/widget/Calendar/Calendar.css");
-/* @import url("../../dojo-release-1.10.0/cbtree/themes/tundra/tundra.css"); */
+/* @import url("../../dojo-release-1.10.0/cbtree/themes/claro/claro.css"); */
 @import url("../../dojo-release-1.10.0/dgrid/css/dgrid.css");
-@import url("../../dojo-release-1.10.0/dgrid/css/skins/tundra.css");
+@import url("../../dojo-release-1.10.0/dgrid/css/skins/claro.css");
 @import url("./miniplayer.css");
 @import url("./shortcut.css");
 @import url("./menubar.css");
@@ -21,21 +21,14 @@ html,body {
 	width: 100%;
 	height: 100%;
 	margin: 0;
-	padding: 0;
 	overflow: hidden;
 }
 
-/* 修改默认树节点图标 */
-.tundra .dijitFolderOpened {
-	background: url('./images/tree/nodeIcons.gif') no-repeat -16px top;
-}
-
-.tundra .dijitFolderClosed {
-	background: url('./images/tree/nodeIcons.gif') no-repeat top left;
-}
-
-.tundra .dijitLeaf {
-	background: url('./images/tree/nodeIcons.gif') no-repeat -32px top;
+.addIcon
+{
+    background: url(./images/add.png);
+    width: 16px;
+    height: 16px;
 }
 
 /* 地图右键菜单 */
@@ -106,4 +99,11 @@ html,body {
 
 .bussline-childrenResultPane {
 	height: 230px;
+}
+
+/* 公司图标 */
+.logoIcon {
+	background: url(./images/317.gif);
+	width: 31px;
+	height: 16px;
 }
