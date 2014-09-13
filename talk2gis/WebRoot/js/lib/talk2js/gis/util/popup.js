@@ -15,7 +15,7 @@ define([
 ], function(declare, lang, on, dom, domAttr, domConstruct, domGeometry, domStyle, 
 		has, popup, Viewport, place) {
 
-/*	popup.open = function(__OpenArgs args){
+	popup.open = function(__OpenArgs args){
 		// summary:
 		//		Popup the widget at the specified position
 		//
@@ -164,6 +164,6 @@ define([
 		return best;
 	}
 	
-	return dijit.popup;*/
+	return dijit.popup;
 	
 });

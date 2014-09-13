@@ -3,20 +3,29 @@ define([
     "dojo/_base/fx",
     "dojo/_base/lang",
     "dojo/dom-geometry",
+    "dojo/dom-style",
     "dojo/dnd/move",
 
     "dojox/layout/FloatingPane",
-    "dojox/widget/Standby"
-    //"dojo/text!./MapFloatingPane.html"
-], function (declare, baseFx, lang, domGeom, move, FloatingPane, Standby) {
+    "dojox/widget/Standby",
+    "dojo/text!./MapFloatingPane.html"
+], function (declare, baseFx, lang, domGeom, domStyle, move, FloatingPane, Standby, template) {
 
     var MapFloatingPane = declare([FloatingPane], {
 
-        templateString: '<div style=\"padding:0px;\" class=\"mapFloatingPane\" id=\"${id}\"><div tabindex=\"0\" role=\"button\" class=\"mapFloatingPaneTitle\" dojoAttachPoint=\"focusNode\"><span dojoAttachPoint=\"closeNode\" dojoAttachEvent=\"onclick: close\" class=\"mapFloatingPaneCloseIcon\"></span><span dojoAttachPoint=\"maxNode\" dojoAttachEvent=\"onclick: maximize\" class=\"dojoxFloatingMaximizeIcon\">&thinsp;</span><span dojoAttachPoint=\"restoreNode\" dojoAttachEvent=\"onclick: _restore\" class=\"dojoxFloatingRestoreIcon\">&thinsp;</span><span dojoAttachPoint=\"dockNode\" dojoAttachEvent=\"onclick: minimize\" class=\"mapFloatingPaneMinimizeIcon\">&thinsp;</span><span dojoAttachPoint=\"titleNode\" class=\"dijitInline dijitTitleNode\"></span></div><div dojoAttachPoint=\"canvas\" class=\"dojoxFloatingPaneCanvas\"><div dojoAttachPoint=\"containerNode\" role=\"region\" tabindex=\"-1\" class=\"${contentClass}\"></div><span dojoAttachPoint=\"resizeHandle\" class=\"dojoxFloatingResizeHandle\"></span></div></div>',
-
+        templateString: template,
+        	
         postCreate: function () {
             this.inherited(arguments);
 
+            var p = domGeom.position(this.domNode);
+            console.debug(p.h);
+            var p1  = domGeom.position(this.focusNode);
+            console.debug(p1.h);
+            domStyle.set(this.canvas, {
+        		height: (p.h - p1.h - 5) + "px"
+        	});
+            
             // 创建等待提示
             this.standby = new Standby({
                 target: this.domNode
@@ -35,6 +44,10 @@ define([
                 },
                 within: false
             });
+        },
+        
+        startup: function(){
+        	this.inherited(arguments);
         },
 
         resize: function (dim) {

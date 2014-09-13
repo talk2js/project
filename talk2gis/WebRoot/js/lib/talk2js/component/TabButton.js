@@ -25,6 +25,8 @@ define([
         	
         widgetsInTemplate: true,
         
+        closeImg: require.toUrl("../resources/images/close.png"),
+        
 		postMixInProperties: function(){
 		},
 		

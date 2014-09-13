@@ -10,6 +10,7 @@ define([
     "dijit/MenuItem",
     "dijit/MenuSeparator",
     "dijit/TooltipDialog",
+    "dijit/popup",
     
 	"dgrid/OnDemandGrid",
     "dgrid/tree",
@@ -21,12 +22,11 @@ define([
     "dgrid/util/mouse",
     
     "./openlayers/control/ZoomBoxControl",
-    "./util/popup",
     "./util/mercator",
 	"./rest/mapabc/poi"
 ], function(declare, lang, Deferred, aspect, Memory, require, TextBox, MenuItem, MenuSeparator, 
-		TooltipDialog, OnDemandGrid, tree, editor, Keyboard, Selection, selector, 
-			ColumnSet, mouse, ZoomBoxControl, popup, mercator, poi) {
+		TooltipDialog, popup, OnDemandGrid, tree, editor, Keyboard, Selection, selector, 
+			ColumnSet, mouse, ZoomBoxControl, mercator, poi) {
 
 	var obj = declare([], {
 
@@ -101,12 +101,12 @@ define([
                 	
                 	tempPane = this.china317Map.createFloatingPane({
         				title: "输入要查询的关键字",
-        				width: 190,
-        				height: 50
+        				width: 210,
+        				height: 70
         			});
                 	keywordInput = new TextBox({
                 		value: me.keyword,
-                		style: "margin-top:5px;"
+                		style: "margin-top:5px; margin-left:10px;"
                 	});
                 	tempPane.addChild(keywordInput);
                 	
