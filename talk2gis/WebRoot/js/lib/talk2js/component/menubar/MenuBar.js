@@ -47,18 +47,18 @@ define([
         	menuItems.push(menuItem3);
         	
         	var dropDownMenu = new DropDownMenu({
-                style: 'display: block',
+                style: 'display:none; margin-left:-25px; margin-top:30px;',
                 menuItems: menuItems
             });
-        	this.domNode.appendChild(dropDownMenu.domNode);
+        	this.testNode.appendChild(dropDownMenu.domNode);
         	dropDownMenu.startup();
         	
-            /*on(this.testNode, 'mouseover', lang.hitch(this, function () {
+            on(this.testNode, 'mouseover', lang.hitch(this, function () {
             	domStyle.set(dropDownMenu.domNode, 'display', 'block');
             }));
             on(this.testNode, 'mouseleave', lang.hitch(this, function () {
              	domStyle.set(dropDownMenu.domNode, 'display', 'none');
-            }));*/
+            }));
         },
         
         startup: function () {

@@ -10,8 +10,6 @@
 .dropDownMenu {
 	position: absolute;
 	z-index: 9999;
-	left: 150px;
-	top: 150px;
 }
 
 .dropDownMenu .dropDownMenuConnector {
