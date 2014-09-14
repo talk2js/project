@@ -15,50 +15,47 @@ define([
     "dijit/_TemplatedMixin",
     
     "./DropDownMenu",
-    
-    "dojo/text!./MenuBar.html"
+    "../../menuBarConfig"
+    //"dojo/text!./MenuBar.html"
 ], function (declare, lang, dom, on, Memory, domStyle, domConstruct, domGeom, require, 
-		MenuItem, ContentPane, _WidgetBase, _TemplatedMixin, DropDownMenu, template) {
+		MenuItem, ContentPane, _WidgetBase, _TemplatedMixin, DropDownMenu, menuBarConfig) {
     
 	return declare([_WidgetBase, _TemplatedMixin], {
 		
-        templateString: template,
+        templateString: '<div class="menubar"></div>',
         	
-		postMixInProperties: function(){
-		},
-		
         postCreate: function () {
         	this.inherited(arguments);
         	
-        	var menuItems = [];
-        	var menuItem1 = new MenuItem({
-                iconClass: "commonIcons dijitIconApplication",
-                label: "erererer",
-            });
-        	menuItems.push(menuItem1);
-        	var menuItem2 = new MenuItem({
-                iconClass: "commonIcons dijitIconApplication",
-                label: "测试功能选项",
-            });
-        	menuItems.push(menuItem2);
-        	var menuItem3 = new MenuItem({
-                label: "测试功能选项",
-            });
-        	menuItems.push(menuItem3);
-        	
-        	var dropDownMenu = new DropDownMenu({
-                style: 'display:none; margin-left:-25px; margin-top:30px;',
-                menuItems: menuItems
-            });
-        	this.testNode.appendChild(dropDownMenu.domNode);
-        	dropDownMenu.startup();
-        	
-            on(this.testNode, 'mouseover', lang.hitch(this, function () {
-            	domStyle.set(dropDownMenu.domNode, 'display', 'block');
-            }));
-            on(this.testNode, 'mouseleave', lang.hitch(this, function () {
-             	domStyle.set(dropDownMenu.domNode, 'display', 'none');
-            }));
+        	for (var i = 0; i < menuBarConfig.length; i++) {
+        		var imgUrl = menuBarConfig[i].img;
+            	var navMenu = domConstruct.toDom('<div class="menubarIcon" style="background:url(' + imgUrl + ');"></div>');
+            	this.domNode.appendChild(navMenu);
+            	
+            	var menuItems = menuBarConfig[i].menuItems;
+            	if(menuItems && menuItems.length > 0){
+            		var arr = [];
+            		for(var j = 0; j < menuItems.length; j++){
+            			var menuItem = new MenuItem({
+            				label: menuItems[j].label
+            			});
+            			arr.push(menuItem);
+            		}
+            		var dropDownMenu = new DropDownMenu({
+                        style: 'display:none; margin-left:-40px; margin-top:30px;',
+                        menuItems: arr
+                    });
+                	navMenu.appendChild(dropDownMenu.domNode);
+                	dropDownMenu.startup();
+                	
+                	on(navMenu, 'mouseover', function () {
+                    	domStyle.set(this.children[0], 'display', 'block');
+                    });
+                    on(navMenu, 'mouseleave', function () {
+                     	domStyle.set(this.children[0], 'display', 'none');
+                    });
+            	}
+			}
         },
         
         startup: function () {

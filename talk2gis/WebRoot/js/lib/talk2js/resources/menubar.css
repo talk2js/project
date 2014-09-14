@@ -16,7 +16,7 @@
 	background-image: url("./images/menubar/tooltip-2.png");
 	width: 66px;
 	height: 14px;
-	left: 0px;
+	margin-left: 20px;
 }
 
 .dropDownMenu .dropDownContainer {
@@ -43,8 +43,7 @@
 .claro .dropDownMenu .dijitMenuItem {
 	color: #FFFFFF;
 	display: block;
-	padding: 0 10px;
-	padding-right: 0px;
+	padding-left: 5px;
 }
 
 .claro .dropDownMenu .dijitMenu {
