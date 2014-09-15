@@ -12,11 +12,29 @@
 	z-index: 9999;
 }
 
+.dropDownMenu .dropDownMenuConnectorBorder {
+	width:0px; 
+  	height:0px; 
+  	border-left:8px solid transparent;  /* left arrow slant */
+  	border-right:8px solid transparent; /* right arrow slant */
+ 	border-bottom:11px solid #fff; /* bottom, add background color here */
+ 	margin-left: 47px;
+ 	margin-top: 4px;
+  	font-size:0px;
+  	line-height:0px;
+}
+
 .dropDownMenu .dropDownMenuConnector {
-	background-image: url("./images/menubar/tooltip-2.png");
-	width: 66px;
-	height: 14px;
-	margin-left: 20px;
+	width:0px; 
+  	height:0px; 
+  	border-left:8px solid transparent;  /* left arrow slant */
+  	border-right:8px solid transparent; /* right arrow slant */
+ 	border-bottom:10px solid rgba(56, 56, 56, 0.9); /* bottom, add background color here */
+ 	position: absolute;
+ 	left: 47px;
+ 	top: 6px;
+  	font-size:0px;
+  	line-height:0px;
 }
 
 .dropDownMenu .dropDownContainer {
