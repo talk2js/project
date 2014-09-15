@@ -9,8 +9,6 @@ define([
 	"dijit/form/TextBox",
     "dijit/MenuItem",
     "dijit/MenuSeparator",
-    "dijit/TooltipDialog",
-    "dijit/popup",
     
 	"dgrid/OnDemandGrid",
     "dgrid/tree",
@@ -25,8 +23,7 @@ define([
     "./util/mercator",
 	"./rest/mapabc/poi"
 ], function(declare, lang, Deferred, aspect, Memory, require, TextBox, MenuItem, MenuSeparator, 
-		TooltipDialog, popup, OnDemandGrid, tree, editor, Keyboard, Selection, selector, 
-			ColumnSet, mouse, ZoomBoxControl, mercator, poi) {
+		OnDemandGrid, tree, editor, Keyboard, Selection, selector, ColumnSet, mouse, ZoomBoxControl, mercator, poi) {
 
 	var obj = declare([], {
 
@@ -34,7 +31,7 @@ define([
 		
 		POI_LAYER_ID: "poiLayer",
 		
-		imgPath: require.toUrl("./resources/images/poi/school32.png"),
+		imgPath: require.toUrl("../resources/images/poi/school32.png"),
 		
 		resultPane: null,
 		
@@ -105,7 +102,6 @@ define([
         				height: 70
         			});
                 	keywordInput = new TextBox({
-                		value: me.keyword,
                 		style: "margin-top:5px; margin-left:10px;"
                 	});
                 	tempPane.addChild(keywordInput);
@@ -240,7 +236,7 @@ define([
 			this.resultPane = this.china317Map.createFloatingPane({
 				title: "查询结果",
 				width: 300,
-				height: 310
+				height: 342
 			});
 			// 关闭面板后销毁图层
 			aspect.after(this.resultPane, 'close', lang.hitch(this, function () {
@@ -253,7 +249,7 @@ define([
 				data: results
 			});
 			var grid = new declare([OnDemandGrid, Keyboard, Selection])({
-				className: "china317gisGrid",
+				className: "mapFloatingPaneResultGrid",
 				store: store,
 			 	columns: [
 			        { label: "名称", field: "name", sortable: false },
@@ -278,6 +274,7 @@ define([
 			if(resources == null || resources.length < 1){
 				return ;
 			}
+			var self = this;
 			var map = this.china317Map.map;
 			var poiLayer = map.getLayer(this.POI_LAYER_ID);
 			if(poiLayer){
@@ -289,37 +286,12 @@ define([
 				    var offset = new OpenLayers.Pixel(-(size.w / 2), -(size.h / 2));
 				    var icon = new OpenLayers.Icon(this.imgPath, size, offset);
 				    var marker = new OpenLayers.Marker(lonlat, icon);
-				    marker.content = "名称：" + resources[i].name + 
-				    	"<p>" + "地址：" + resources[i].address;
-				    marker.events.register("mouseover", this, this._popupInfo);
-				    marker.events.register("mouseout", this, this._unpopupInfo);
+				    marker.resource = resource;
 				    poiLayer.addMarker(marker);
+				    // 气泡提示
+				    this.china317Map.addMapInfoPopup(marker);
 				}
 			}
-		},
-		
-		_popupInfo: function(e){
-			//console.debug(e);
-			var marker = e.object;
-			if(!marker.tooltip){
-				var tooltip = new TooltipDialog({
-				    style: "width:220px;",
-				    content: marker.content,
-				    onMouseLeave: function(){
-			            popup.close(marker.tooltip);
-			        }
-				});
-			}
-			popup.open({
-		        parent: this.china317Map,
-		        popup: tooltip,
-		        around: e.element,
-		        orient: ["above"]
-		    });
-		},
-		
-		_unpopupInfo: function(e){
-			popup.close();
 		},
 		
 		_clearResources: function(){

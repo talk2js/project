@@ -14,6 +14,7 @@ define([
     "dijit/layout/ContentPane",
     
     "./MapFloatingPane",
+    "./MapInfoPopup",
     "./MapContextMenu",
     "./MapSwitcher",
     "./MapSlider",
@@ -28,7 +29,7 @@ define([
 	"./Road",
 	"./openlayers/layer/China317Vehicle"
 ], function (declare, array, lang, on, has, domConstruct, domStyle, domGeom, aspect, request, popup, 
-		ContentPane, MapFloatingPane, MapContextMenu, MapSwitcher, MapSlider, MapPaneDock, 
+		ContentPane, MapFloatingPane, MapInfoPopup, MapContextMenu, MapSwitcher, MapSlider, MapPaneDock, 
 		mapFactory, Busline, Poi, PoiCluster, Route, RouteDrag, District, Road, China317Vehicle) {
 
 	return declare([ContentPane], {
@@ -279,6 +280,26 @@ define([
 			pane.startup();
 			pane.bringToTop();
 			return pane;
+        },
+        
+        addMapInfoPopup: function(marker){
+        	var mapPane = this;
+        	domStyle.set(marker.icon.imageDiv, {
+        		cursor: "pointer"
+        	});
+        	marker.events.register("click", marker, function(){
+		    	var resource = this.resource;
+				if(this.mapInfoPopup){
+					this.mapInfoPopup.destroy();
+				}
+				this.mapInfoPopup = new MapInfoPopup({
+	                map: mapPane.map,
+	                lonlat: marker.lonlat
+	            });
+				mapPane.domNode.appendChild(this.mapInfoPopup.domNode);
+				this.mapInfoPopup.startup();
+				this.mapInfoPopup.show();
+		    });
         },
         
         destroy: function () {

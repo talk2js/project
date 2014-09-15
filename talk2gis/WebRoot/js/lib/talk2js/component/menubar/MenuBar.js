@@ -10,7 +10,6 @@ define([
     "require",
     
     "dijit/MenuItem",
-    "dijit/layout/ContentPane",
     "dijit/_WidgetBase",
     "dijit/_TemplatedMixin",
     
@@ -18,7 +17,7 @@ define([
     "../../menuBarConfig"
     //"dojo/text!./MenuBar.html"
 ], function (declare, lang, dom, on, Memory, domStyle, domConstruct, domGeom, require, 
-		MenuItem, ContentPane, _WidgetBase, _TemplatedMixin, DropDownMenu, menuBarConfig) {
+		MenuItem, _WidgetBase, _TemplatedMixin, DropDownMenu, menuBarConfig) {
     
 	return declare([_WidgetBase, _TemplatedMixin], {
 		

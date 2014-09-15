@@ -19,9 +19,7 @@ define([
             this.inherited(arguments);
 
             var p = domGeom.position(this.domNode);
-            console.debug(p.h);
             var p1  = domGeom.position(this.focusNode);
-            console.debug(p1.h);
             domStyle.set(this.canvas, {
         		height: (p.h - p1.h - 5) + "px"
         	});
@@ -39,7 +37,7 @@ define([
                 box: {
                     l: 0,
                     t: 0,
-                    w: document.body.clientWidth - $(this.domNode).outerWidth() - 200,
+                    w: document.body.clientWidth - $(this.domNode).outerWidth() - 15,
                     h: document.body.clientHeight - $(this.domNode).outerHeight()
                 },
                 within: false

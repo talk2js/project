@@ -1,0 +1,45 @@
+.popupInfo {
+	position: absolute;
+	z-index: 999999;
+	display: none;
+}
+
+.popupInfo .popupInfoConnectorBorder {
+	width:0px; 
+  	height:0px; 
+  	border-left:8px solid transparent;  /* left arrow slant */
+  	border-right:8px solid transparent; /* right arrow slant */
+ 	border-bottom:11px solid #fff; /* bottom, add background color here */
+ 	margin-left: 47px;
+ 	margin-top: 4px;
+  	font-size:0px;
+  	line-height:0px;
+}
+
+.popupInfo .popupInfoConnector {
+	width:0px; 
+  	height:0px; 
+  	border-left:8px solid transparent;  /* left arrow slant */
+  	border-right:8px solid transparent; /* right arrow slant */
+ 	border-bottom:10px solid rgba(56, 56, 56, 0.9); /* bottom, add background color here */
+ 	position: absolute;
+ 	left: 47px;
+ 	top: 6px;
+  	font-size:0px;
+  	line-height:0px;
+}
+
+.popupInfo .popupInfoContainer {
+	background-color: #FFF;
+	background-image: linear-gradient(rgba(56, 56, 56, 0.8) 0%, rgba(60, 60, 60, 0.6) 100%);
+	background-color: transparent;
+	background-position: center bottom;
+	border: 1px solid #fff;
+	padding-left: 0;
+	padding-right: 0;
+	border-radius: 4px;
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
+	font-size: 13px;
+	font-family: "微软雅黑";
+	color: #000;
+}

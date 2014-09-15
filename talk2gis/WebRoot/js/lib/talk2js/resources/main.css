@@ -16,6 +16,7 @@
 @import url("./menubar.css");
 @import url("./tabbutton.css");
 @import url("./mapfloatingpane.css");
+@import url("./popupinfo.css");
 
 html,body {
 	width: 100%;
@@ -101,9 +102,6 @@ html,body {
 	height: 230px;
 }
 
-/* 公司图标 */
-.logoIcon {
-	background: url(./images/317.gif);
-	width: 31px;
-	height: 16px;
+.mapFloatingPaneResultGrid {
+	height: 25em;
 }
