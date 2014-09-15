@@ -31,6 +31,8 @@ define([
         
         data: null,
         
+        _offset: null,
+        
         postCreate: function () {
         	this.inherited(arguments);
         	
@@ -41,6 +43,14 @@ define([
            	tr.append(tdName);
            	tr.append(tdValue);
           	table.append(tr);
+          	
+          	/*tr = $('<tr/>');
+            tdName = $('<td class=name>test:</td>');
+            tdValue = $('<td class=value>vdsfsdfsdfsfd</td>');
+           	tr.append(tdName);
+           	tr.append(tdValue);
+          	table.append(tr);*/
+          	
             $(this.containerNode).append(table);
         },
         
@@ -55,9 +65,14 @@ define([
         	}
             var px = this.map.getPixelFromLonLat(this.lonlat);
             if (px) {
+            	this._offset = {
+            		x: -54,
+            		y: -82
+            	};
+            	
             	domStyle.set(this.domNode, {
-            		left: px.x + "px",
-            		top: px.y + "px"
+            		left: px.x + this._offset.x + "px",
+            		top: px.y + this._offset.y + "px"
             	});
             }
         },

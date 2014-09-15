@@ -1,0 +1,59 @@
+.mapInfoPopup {
+	position: absolute;
+	z-index: 999999;
+	display: none;
+}
+
+.mapInfoPopup .mapInfoPopupContainer {
+	background-color: #FFF;
+	border: 2px solid #4b4c49;
+	padding-left: 0;
+	padding-right: 0;
+	border-radius: 5px;
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
+	font-size: 12px;
+	font-family: "微软雅黑";
+	color: #000;
+}
+
+.mapInfoPopup .mapInfoPopupConnectorBorder {
+	width:0px; 
+  	height:0px; 
+  	border-left:11px solid transparent;  /* left arrow slant */
+  	border-right:11px solid transparent; /* right arrow slant */
+ 	border-top:13px solid #4b4c49; /* bottom, add background color here */
+ 	margin-left: 44px;
+ 	margin-top: -2px;
+  	font-size: -1px;
+  	line-height:0px;
+}
+
+.mapInfoPopup .mapInfoPopupConnector {
+	width: 0px;
+	height: 0px;
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+	border-top: 10px solid #fff;
+	position: absolute;
+	left: 47px;
+	top: 55px;
+	font-size: 0px;
+	line-height: 0px;
+}
+
+.mapInfoPopup .mapInfoPopupCloseImg {
+	width: 16px;
+	height: 16px;
+	background: url(images/close1.png) no-repeat;
+	margin-top: 5px;
+	margin-left: 150px;
+	margin-right: 6px;
+}
+
+.mapInfoPopup .mapInfoPopupSeparator {
+	margin: 0 auto;
+	margin-top: 6px;
+	width: 95%;
+	height: 1px;
+	background-color: #caccd3;
+}

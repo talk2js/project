@@ -16,7 +16,7 @@
 @import url("./menubar.css");
 @import url("./tabbutton.css");
 @import url("./mapfloatingpane.css");
-@import url("./popupinfo.css");
+@import url("./mapinfopopup.css");
 
 html,body {
 	width: 100%;
