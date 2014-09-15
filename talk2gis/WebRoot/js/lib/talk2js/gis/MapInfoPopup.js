@@ -31,8 +31,6 @@ define([
         
         data: null,
         
-        _offset: null,
-        
         postCreate: function () {
         	this.inherited(arguments);
         	
@@ -56,23 +54,23 @@ define([
         
         startup: function () {
             this.inherited(arguments);
-            this.updatePosition();
         },
 
         updatePosition: function (lonlat) {
         	if(lonlat){
         		this.lonlat = lonlat;
         	}
+        	var connectorHeight = 13;
+        	var h = $(this.domNode).height();
             var px = this.map.getPixelFromLonLat(this.lonlat);
             if (px) {
-            	this._offset = {
-            		x: -54,
-            		y: -82
-            	};
-            	
             	domStyle.set(this.domNode, {
-            		left: px.x + this._offset.x + "px",
-            		top: px.y + this._offset.y + "px"
+            		left: px.x - 54 + "px",
+            		top: px.y - h - connectorHeight - 2 + "px"
+            	});
+            	
+            	domStyle.set(this.connectorNode, {
+            		top: h - connectorHeight + "px"
             	});
             }
         },
