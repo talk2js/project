@@ -306,6 +306,7 @@ define([
 			var map = this.china317Map.map;
 			var poiLayer = map.getLayer(this.POI_LAYER_ID);
 			if(poiLayer){
+				poiLayer.clearMarkers();
 				map.removeLayer(poiLayer);
 			}
 		}

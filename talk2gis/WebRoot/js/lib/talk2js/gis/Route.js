@@ -242,14 +242,17 @@ define([
 			var map = this.china317Map.map;
 			var startEndMarkerLayer = map.getLayer(this.STARTENDMARKER_LAYER_ID);
 			if(startEndMarkerLayer){
+				startEndMarkerLayer.clearMarkers();
 				map.removeLayer(startEndMarkerLayer);
 			}
 			var routeLayer = map.getLayer(this.STARTENDROUTE_LAYER_ID);
 			if(routeLayer){
+				routeLayer.removeAllFeatures();
 				map.removeLayer(routeLayer);
 			}
 			var avoidRegionLayer = map.getLayer(this.AVOIDREGION_LAYER_ID);
 			if(avoidRegionLayer){
+				avoidRegionLayer.removeAllFeatures();
 				map.removeLayer(avoidRegionLayer);
 			}
 			this.startMarker = null;

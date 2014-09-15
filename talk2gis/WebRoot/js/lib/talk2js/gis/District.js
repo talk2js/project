@@ -162,6 +162,7 @@ define([
 			var map = this.china317Map.map;
 			var districtLayer = map.getLayer(this.DISTRICT_LAYER_ID);
 			if(districtLayer){
+				districtLayer.removeAllFeatures();
 				map.removeLayer(districtLayer);
 			}
 		}

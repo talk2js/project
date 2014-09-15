@@ -316,6 +316,7 @@ define([
 			var map = this.china317Map.map;
 			var roadLayer = map.getLayer(this.ROAD_LAYER_ID);
 			if(roadLayer){
+				roadLayer.removeAllFeatures();
 				map.removeLayer(roadLayer);
 			}
 		}

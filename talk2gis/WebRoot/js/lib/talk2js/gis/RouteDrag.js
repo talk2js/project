@@ -162,6 +162,7 @@ define([
 			var map = this.china317Map.map;
 			var dragRouteLayer = map.getLayer(this.DRAGROUTE_LAYER_ID);
 			if(dragRouteLayer){
+				dragRouteLayer.removeAllFeatures();
 				map.removeLayer(dragRouteLayer);
 			}
 		}

@@ -271,6 +271,7 @@ define([
 			var map = this.china317Map.map;
 			var poiClusterLayer = map.getLayer(this.POICLUSTER_LAYER_ID);
 			if(poiClusterLayer){
+				poiClusterLayer.removeAllFeatures();
 				map.removeLayer(poiClusterLayer);
 				poiClusterLayer.destroy();
 			}

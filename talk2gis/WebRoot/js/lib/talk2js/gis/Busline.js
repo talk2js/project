@@ -270,6 +270,7 @@ define([
 			var map = this.china317Map.map;
 			var buslineLayer = map.getLayer(this.BUSLINE_LAYER_ID);
 			if(buslineLayer){
+				buslineLayer.removeAllFeatures();
 				map.removeLayer(buslineLayer);
 			}
 		}

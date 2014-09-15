@@ -300,6 +300,11 @@ define([
 				this.mapInfoPopup.startup();
 				this.mapInfoPopup.show();
 		    });
+        	aspect.before(marker, "erase", function(){
+        		if(this.mapInfoPopup){
+        			this.mapInfoPopup.destroy();
+        		}
+        	});
         },
         
         destroy: function () {
