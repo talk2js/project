@@ -87,6 +87,8 @@ define([
          */
         _interval: 5000,
         
+        popupArray: null,
+        
         busline: null,
         
         district: null,
@@ -194,6 +196,14 @@ define([
 					}
 				}), this._interval);
 			}
+			// 移动地图完，移动气泡提示
+			this.popupArray = [];
+			this.map.events.register("moveend", this, lang.hitch(this, function(){
+				for (var i = 0; i < this.popupArray.length; i++) {
+					var popup = this.popupArray[i];
+					popup.updatePosition();
+				}
+			}));
         },
         
         _initVehicleLayer: function(){
@@ -297,6 +307,7 @@ define([
 	                lonlat: marker.lonlat
 	            });
 				mapPane.domNode.appendChild(this.mapInfoPopup.domNode);
+				mapPane.popupArray.push(this.mapInfoPopup);
 				this.mapInfoPopup.startup();
 				this.mapInfoPopup.show();
 		    });

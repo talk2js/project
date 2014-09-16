@@ -54,6 +54,10 @@ define([
         
         startup: function () {
             this.inherited(arguments);
+            
+            on(this.closeNode, "click", lang.hitch(this, function(){
+            	this.destroy();
+            }));
         },
 
         updatePosition: function (lonlat) {
