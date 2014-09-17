@@ -5,11 +5,13 @@
 define([
 	'dojo/_base/array'
 ], function(array) {
-
-	OpenLayers.Control.ZIndexManagerControl = OpenLayers.Class(OpenLayers.Control, {
+	
+    return OpenLayers.Class(OpenLayers.Control, {
+    	
         initialize: function(options) {
             OpenLayers.Control.prototype.initialize.apply(this, arguments);
         },
+        
         setMap: function(map) {
             OpenLayers.Control.prototype.setMap.apply(this, arguments);
             /**
@@ -27,6 +29,7 @@ define([
                 this._adjustMarkersLayerIndex();
             });
         },
+        
         _adjustMarkersLayerIndex: function() {
             var me = this;
             var markersLayer = [];
@@ -43,11 +46,13 @@ define([
                 me.map.setLayerIndex(layer, me.map.layers.length);
             });
         },
+        
         _moveLayerToTop: function(layer) {
             var index = Math.max(this.map.Z_INDEX_BASE['Feature'] - 1,
             layer.getZIndex()) + 1;
             layer.setZIndex(index);
         },
+        
         _getMaxZIndex: function() {
             var me = this,
                 max = -1;
@@ -58,11 +63,14 @@ define([
             }
             return max;
         },
+        
         forceUpdate: function () {
             this._adjustMarkersLayerIndex();
         },
+        
         draw: function() {},
+        
         CLASS_NAME: 'OpenLayers.Control.ZIndexManagerControl'
+        	
     });
-    return OpenLayers.Control.ZIndexManagerControl;
 });

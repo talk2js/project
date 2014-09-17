@@ -13,6 +13,9 @@ define([
     "dijit/popup",
     "dijit/layout/ContentPane",
     
+    "dojox/collections/ArrayList",
+    
+    "./MapTool",
     "./MapFloatingPane",
     "./MapInfoPopup",
     "./MapContextMenu",
@@ -29,8 +32,9 @@ define([
 	"./Road",
 	"./openlayers/layer/China317Vehicle"
 ], function (declare, array, lang, on, has, domConstruct, domStyle, domGeom, aspect, request, popup, 
-		ContentPane, MapFloatingPane, MapInfoPopup, MapContextMenu, MapSwitcher, MapSlider, MapPaneDock, 
-		mapFactory, Busline, Poi, PoiCluster, Route, RouteDrag, District, Road, China317Vehicle) {
+		ContentPane, ArrayList, MapTool, MapFloatingPane, MapInfoPopup, MapContextMenu, MapSwitcher, 
+		MapSlider, MapPaneDock, mapFactory, Busline, Poi, PoiCluster, Route, RouteDrag, District, 
+		Road, China317Vehicle) {
 
 	return declare([ContentPane], {
 
@@ -45,6 +49,8 @@ define([
          * 地图资源类型
          */
         type: null,
+        
+        mapTool: null,
         
         /**
          * 地图右键菜单
@@ -114,6 +120,9 @@ define([
             	this._initDock();
             }
             
+            this.mapTool = new MapTool({
+            	china317Map: this
+            });
             this.busline = new Busline({
             	china317Map: this
             });
@@ -197,12 +206,11 @@ define([
 				}), this._interval);
 			}
 			// 移动地图完，移动气泡提示
-			this.popupArray = [];
+			this.popupList = new ArrayList();
 			this.map.events.register("moveend", this, lang.hitch(this, function(){
-				for (var i = 0; i < this.popupArray.length; i++) {
-					var popup = this.popupArray[i];
-					popup.updatePosition();
-				}
+				this.popupList.forEach(function(item){
+					item.updatePosition();
+				});
 			}));
         },
         
@@ -300,20 +308,35 @@ define([
         	marker.events.register("click", marker, function(){
 		    	var resource = this.resource;
 				if(this.mapInfoPopup){
+					mapPane.popupList.remove(this.mapInfoPopup);
 					this.mapInfoPopup.destroy();
+					this.mapInfoPopup = null;
 				}
 				this.mapInfoPopup = new MapInfoPopup({
 	                map: mapPane.map,
 	                lonlat: marker.lonlat
 	            });
 				mapPane.domNode.appendChild(this.mapInfoPopup.domNode);
-				mapPane.popupArray.push(this.mapInfoPopup);
+				mapPane.popupList.add(this.mapInfoPopup);
 				this.mapInfoPopup.startup();
 				this.mapInfoPopup.show();
+				
+				this.mapInfoPopup.on("close", lang.hitch(this, function(){
+					mapPane.popupList.remove(this.mapInfoPopup);
+					this.mapInfoPopup.destroy();
+        			this.mapInfoPopup = null;
+				}));
 		    });
         	aspect.before(marker, "erase", function(){
         		if(this.mapInfoPopup){
+        			mapPane.popupList.remove(this.mapInfoPopup);
         			this.mapInfoPopup.destroy();
+        			this.mapInfoPopup = null;
+        		}
+        	});
+        	aspect.after(marker, "moveTo", function(){
+        		if(this.mapInfoPopup){
+        			this.mapInfoPopup.updatePosition(marker.lonlat);
         		}
         	});
         },

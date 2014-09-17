@@ -34,6 +34,8 @@ define([
 				type: "MapABC"
 			});
 			paneContainer.addChild(mapPane);
+			
+			//mapPane.mapTool.testDrawTrace();
 		}
 
 	});

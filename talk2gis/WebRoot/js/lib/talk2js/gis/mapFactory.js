@@ -141,8 +141,8 @@ define([
 			map.addLayers([google, abc, traffic, qq]);
 			// 添加地图控件
 			map.addControl(new OpenLayers.Control.Navigation());
-			map.addControl(new OpenLayers.Control.ScaleLine());
-			//map.addControl(new MousePosition());
+			//map.addControl(new OpenLayers.Control.ScaleLine());
+			map.addControl(new MousePosition());
 			//map.addControl(new OpenLayers.Control.LayerSwitcher());
 			//map.addControl(new PanZoomBar());
 			map.addControl(new Overview({
@@ -153,7 +153,7 @@ define([
 	            maximized: false,
 	            autoPan: true
 	        }));
-			//map.addControl(new ZIndexManagerControl());
+			map.addControl(new ZIndexManagerControl());
 			var center = new OpenLayers.LonLat(11983491.5, 4217489.5);
 			map.moveTo(center, 4);
 			

@@ -4,6 +4,7 @@ define([
     "dojo/_base/array",
     "dojo/dom",
     "dojo/on",
+    "dojo/Evented",
     "dojo/dom-style",
     "dojo/dom-construct",
     "dojo/dom-geometry",
@@ -14,10 +15,10 @@ define([
     "dijit/_WidgetsInTemplateMixin",
     
     "dojo/text!./MapInfoPopup.html"
-], function (declare, lang, array, dom, on, domStyle, domConstruct, domGeom, require, 
+], function (declare, lang, array, dom, on, Evented, domStyle, domConstruct, domGeom, require, 
 		_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, template) {
     
-	return declare([_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin], {
+	return declare([_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, Evented], {
 		
         templateString: template,
 
@@ -36,18 +37,39 @@ define([
         	
         	var table = $('<table/>');
          	var tr = $('<tr/>');
-            var tdName = $('<td class=name>test:</td>');
-            var tdValue = $('<td class=value>vdsfsdfsdfsfd</td>');
+            var tdName = $('<td class=name>车牌号:</td>');
+            var tdValue = $('<td class=value>沪A34333</td>');
            	tr.append(tdName);
            	tr.append(tdValue);
           	table.append(tr);
           	
-          	/*tr = $('<tr/>');
-            tdName = $('<td class=name>test:</td>');
-            tdValue = $('<td class=value>vdsfsdfsdfsfd</td>');
+          	tr = $('<tr/>');
+            tdName = $('<td class=name>所属单位:</td>');
+            tdValue = $('<td class=value>长春一汽长春一汽长春一汽</td>');
            	tr.append(tdName);
            	tr.append(tdValue);
-          	table.append(tr);*/
+          	table.append(tr);
+          	
+          	tr = $('<tr/>');
+            tdName = $('<td class=name>车速:</td>');
+            tdValue = $('<td class=value>60km/h</td>');
+           	tr.append(tdName);
+           	tr.append(tdValue);
+          	table.append(tr);
+          	
+          	tr = $('<tr/>');
+            tdName = $('<td class=name>方向:</td>');
+            tdValue = $('<td class=value>东北</td>');
+           	tr.append(tdName);
+           	tr.append(tdValue);
+          	table.append(tr);
+          	
+          	tr = $('<tr/>');
+            tdName = $('<td class=name>状态:</td>');
+            tdValue = $('<td class=value>行驶</td>');
+           	tr.append(tdName);
+           	tr.append(tdValue);
+          	table.append(tr);
           	
             $(this.containerNode).append(table);
         },
@@ -56,7 +78,7 @@ define([
             this.inherited(arguments);
             
             on(this.closeNode, "click", lang.hitch(this, function(){
-            	this.destroy();
+            	this.emit("close");
             }));
         },
 
