@@ -93,7 +93,12 @@ define([
          */
         _interval: 5000,
         
-        popupArray: null,
+        _popupList: null,
+        
+        /**
+         * 是否只显示一个MapPopupInfo
+         */
+        singlePopup: true,
         
         busline: null,
         
@@ -116,6 +121,7 @@ define([
             this._initMapContextMenu();
             this._initMapSwitcher();
             this._initMapSlider();
+            this._initPopupList();
             if(this.isDock){
             	this._initDock();
             }
@@ -205,10 +211,14 @@ define([
 					}
 				}), this._interval);
 			}
-			// 移动地图完，移动气泡提示
-			this.popupList = new ArrayList();
+			
+        },
+        
+        _initPopupList: function(){
+        	// 移动地图完，移动气泡提示
+			this._popupList = new ArrayList();
 			this.map.events.register("moveend", this, lang.hitch(this, function(){
-				this.popupList.forEach(function(item){
+				this._popupList.forEach(function(item){
 					item.updatePosition();
 				});
 			}));
@@ -307,29 +317,35 @@ define([
         	});
         	marker.events.register("click", marker, function(){
 		    	var resource = this.resource;
+		    	// 全部隐藏，只显示一个popup
+		    	if(mapPane.singlePopup){
+		    		mapPane._popupList.forEach(function(item){
+						item.hide();
+					});
+		    	}
+		    	
 				if(this.mapInfoPopup){
-					mapPane.popupList.remove(this.mapInfoPopup);
-					this.mapInfoPopup.destroy();
-					this.mapInfoPopup = null;
+					this.mapInfoPopup.show();
+					return ;
 				}
 				this.mapInfoPopup = new MapInfoPopup({
 	                map: mapPane.map,
 	                lonlat: marker.lonlat
 	            });
 				mapPane.domNode.appendChild(this.mapInfoPopup.domNode);
-				mapPane.popupList.add(this.mapInfoPopup);
+				mapPane._popupList.add(this.mapInfoPopup);
 				this.mapInfoPopup.startup();
 				this.mapInfoPopup.show();
 				
 				this.mapInfoPopup.on("close", lang.hitch(this, function(){
-					mapPane.popupList.remove(this.mapInfoPopup);
+					mapPane._popupList.remove(this.mapInfoPopup);
 					this.mapInfoPopup.destroy();
         			this.mapInfoPopup = null;
 				}));
 		    });
         	aspect.before(marker, "erase", function(){
         		if(this.mapInfoPopup){
-        			mapPane.popupList.remove(this.mapInfoPopup);
+        			mapPane._popupList.remove(this.mapInfoPopup);
         			this.mapInfoPopup.destroy();
         			this.mapInfoPopup = null;
         		}
