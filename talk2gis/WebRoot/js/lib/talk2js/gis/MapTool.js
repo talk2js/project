@@ -13,7 +13,7 @@ define([
 		
         carPositionMap: null,
 
-        imgPath: require.toUrl("../resources/images/marker-gold.png"),
+        imgPath: require.toUrl("../resources/images/vehicle.png"),
         
         // 车辆图层
         carMarkerLayer: null,
@@ -68,7 +68,7 @@ define([
         	this.carPositionMap.add("1", arr);
         	// 初始化图标
         	var lonlat = new OpenLayers.LonLat(13516278, 3652873);
-        	var size = new OpenLayers.Size(21, 25);
+        	var size = new OpenLayers.Size(32, 32);
             var offset = new OpenLayers.Pixel(-(size.w / 2), -(size.h / 2));
             var icon = new OpenLayers.Icon(this.imgPath, size, offset);
             var marker = new OpenLayers.Marker(lonlat, icon);
@@ -86,7 +86,7 @@ define([
         		//marker.lonlat = lonlat;
                 var pixel = this.china317Map.map.getLayerPxFromLonLat(lonlat);
                 marker.moveTo(pixel);
-			}), 2 * 1000);
+			}), 3 * 1000);
         },
         
         testDrawTrace: function(){
@@ -95,7 +95,7 @@ define([
         	this.carPositionMap.add("1", arr);
         	// 初始化图标
         	var lonlat = new OpenLayers.LonLat(13516278, 3652873);
-        	var size = new OpenLayers.Size(21, 25);
+        	var size = new OpenLayers.Size(32, 32);
             var offset = new OpenLayers.Pixel(-(size.w / 2), -(size.h / 2));
             var icon = new OpenLayers.Icon(this.imgPath, size, offset);
             var marker = new OpenLayers.Marker(lonlat, icon);
@@ -120,7 +120,7 @@ define([
                 	oldPoint: oldPoint,
                 	newPoint: newPoint
                 }, "1");
-			}), 2 * 1000);
+			}), 3 * 1000);
         },
         
         getRandomNum: function (Min, Max) { 
