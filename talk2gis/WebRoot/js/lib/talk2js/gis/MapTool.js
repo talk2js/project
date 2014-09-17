@@ -13,7 +13,7 @@ define([
 		
         carPositionMap: null,
 
-        imgPath: require.toUrl("../resources/images/vehicle.png"),
+        imgPath: require.toUrl("../resources/images/arrow.png"),
         
         // 车辆图层
         carMarkerLayer: null,
@@ -116,10 +116,20 @@ define([
                 
                 //var pointArray = this.carPositionMap.item("1");
                 //pointArray.push(newPoint);
+                var seg = {
+                    	x1: oldPoint.x,
+                    	x2: newPoint.x,
+                    	y1: oldPoint.y,
+                    	y2: newPoint.y
+             	};
+                var angle = this._bearing(seg);
+                $(marker.icon.imageDiv).css("transform", "rotate(" + angle + "deg)");
+                
                 this.drawTrace({
                 	oldPoint: oldPoint,
                 	newPoint: newPoint
                 }, "1");
+                
 			}), 3 * 1000);
         },
         
