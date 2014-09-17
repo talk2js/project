@@ -4,13 +4,47 @@
 	display: none;
 }
 
+.mapInfoPopup .name {
+	width: 65px;
+	height: 22px;
+	background-color: #f4f5f7;
+	align: "right";
+}
+
+.mapInfoPopup .value {
+	width: 100px;
+	height: 22px;
+}
+
+.mapInfoPopup .mapInfoPopupTitle {
+	font-weight: bold;
+	font-size: 13px;
+	/* font-family: "微软雅黑"; */
+	position: absolute;
+	left: 15px;
+	top: 5px;
+}
+
+.mapInfoPopup .mapInfoPopupButtons {
+	margin-top: 5px;
+	margin-left: 30px;
+	margin-bottom: 5px;
+}
+
+.mapInfoPopup .mapInfoPopupButtons a {
+	text-decoration: none;
+	outline: 0;
+	font-size: 12px;
+	/* font-family: "微软雅黑"; */
+}
+
 .mapInfoPopup .mapInfoPopupContainer {
 	background-color: #FFF;
-	border: 2px solid #4b4c49;
+	border: 2px solid #78797a;
 	padding-left: 0;
 	padding-right: 0;
 	border-radius: 5px;
-	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
+	box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.4);
 	font-size: 12px;
 	font-family: "微软雅黑";
 	color: #000;
@@ -21,7 +55,7 @@
   	height:0px; 
   	border-left:11px solid transparent;  /* left arrow slant */
   	border-right:11px solid transparent; /* right arrow slant */
- 	border-top:13px solid #4b4c49; /* bottom, add background color here */
+ 	border-top:13px solid #78797a; /* bottom, add background color here */
  	margin-left: 44px;
  	margin-top: -2px;
   	font-size: -1px;
@@ -45,7 +79,7 @@
 	width: 16px;
 	height: 16px;
 	background: url(images/close1.png) no-repeat;
-	margin-top: 5px;
+	margin-top: 6px;
 	margin-left: 150px;
 	margin-right: 6px;
 	cursor: pointer;
