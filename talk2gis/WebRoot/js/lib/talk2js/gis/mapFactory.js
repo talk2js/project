@@ -154,8 +154,8 @@ define([
 	            autoPan: true
 	        }));
 			map.addControl(new ZIndexManagerControl());
-			var center = new OpenLayers.LonLat(11983491.5, 4217489.5);
-			map.moveTo(center, 4);
+			var center = new OpenLayers.LonLat(13516278, 3652873);
+			map.moveTo(center, 15);
 			
 			return map;
 		},

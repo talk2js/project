@@ -64,10 +64,10 @@ define([
 
         testCarMove: function(){
         	var arr = [];
-        	arr.push(new OpenLayers.Geometry.Point(11983491.5, 4217489.5));
+        	arr.push(new OpenLayers.Geometry.Point(13516278, 3652873));
         	this.carPositionMap.add("1", arr);
         	// 初始化图标
-        	var lonlat = new OpenLayers.LonLat(11983491.5, 4217489.5);
+        	var lonlat = new OpenLayers.LonLat(13516278, 3652873);
         	var size = new OpenLayers.Size(21, 25);
             var offset = new OpenLayers.Pixel(-(size.w / 2), -(size.h / 2));
             var icon = new OpenLayers.Icon(this.imgPath, size, offset);
@@ -78,8 +78,8 @@ define([
 		    this.china317Map.addMapInfoPopup(marker);
             
         	var task = setInterval(lang.hitch(this, function() {
-        		var x = this.getRandomNum(13936286, 13936986);
-        		var y = this.getRandomNum(5440177, 5440877);
+        		var x = this.getRandomNum(13516178, 13516978);
+        		var y = this.getRandomNum(3652173, 3652973);
         		
         		var newPoint = new OpenLayers.Geometry.Point(x, y);
         		var lonlat = new OpenLayers.LonLat(x, y);
@@ -91,10 +91,10 @@ define([
         
         testDrawTrace: function(){
         	var arr = [];
-        	arr.push(new OpenLayers.Geometry.Point(13936686, 5440477));
+        	arr.push(new OpenLayers.Geometry.Point(13516278, 3652873));
         	this.carPositionMap.add("1", arr);
         	// 初始化图标
-        	var lonlat = new OpenLayers.LonLat(13936686, 5440477);
+        	var lonlat = new OpenLayers.LonLat(13516278, 3652873);
         	var size = new OpenLayers.Size(21, 25);
             var offset = new OpenLayers.Pixel(-(size.w / 2), -(size.h / 2));
             var icon = new OpenLayers.Icon(this.imgPath, size, offset);
@@ -105,8 +105,8 @@ define([
 		    this.china317Map.addMapInfoPopup(marker);
             
         	var task = setInterval(lang.hitch(this, function() {
-        		var x = this.getRandomNum(13936286, 13936986);
-        		var y = this.getRandomNum(5440177, 5440877);
+        		var x = this.getRandomNum(13516178, 13516978);
+        		var y = this.getRandomNum(3652173, 3652973);
         		
         		var oldPoint = new OpenLayers.Geometry.Point(marker.lonlat.lon, marker.lonlat.lat);
         		var newPoint = new OpenLayers.Geometry.Point(x, y);
