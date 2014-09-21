@@ -35,8 +35,8 @@ define([
 			});
 			paneContainer.addChild(mapPane);
 			
-			mapPane.mapTool.testDrawTrace();
-			mapPane.mapTool.testDrawTrace();
+			//mapPane.mapTool.testDrawTrace();
+			//mapPane.mapTool.testDrawTrace();
 		}
 
 	});

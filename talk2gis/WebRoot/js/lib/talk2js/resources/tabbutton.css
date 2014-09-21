@@ -20,6 +20,12 @@
 		rgba(106, 107, 109, 0.8) 100%);
 }
 
+.tabbutton button:hover {
+	border: 1px solid #32332e;
+	background: linear-gradient(rgba(39, 40, 34, 1) 0%,
+		rgba(60, 61, 57, 1) 100%);
+}
+
 .tabbutton button::-moz-focus-inner {
 	border-color: transparent !important;
 }
@@ -30,4 +36,8 @@
 	margin-left: -10px;
 	margin-bottom: 4px;
 	cursor: pointer;
+}
+
+.tabbutton img:hover {
+	background: #c3c5cd;
 }
