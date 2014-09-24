@@ -15,17 +15,25 @@ define([
 	return declare([], {
 
 		constructor: function(args) {
-			var node1 = dom.byId("header");
-			var node1p = domGeom.position(node1);
-			var node2 = dom.byId("footer");
-			var node2p = domGeom.position(node2);
+			var height = document.body.clientHeight - $("#header").height() - $("#footer").height();
 			
-			var height = document.body.clientHeight - node1p.h - node2p.h;
-            var paneContainer = new StackContainer({
-                style: "height:" + height + "px; width:100%; position:absoulte; " +
-            		"z-index:10; left:0px; top:" + node1p.h + "px;"
-            }, "paneContainer");
+			$("#paneContainer").css({
+				"height": height + "px", 
+				"width": "100%",
+				"position": "absoulte",
+				"z-index": "10",
+				"left": "0px",
+				"top": $("#header").height() + "px"
+			});
+			
+            var paneContainer = new StackContainer({}, "paneContainer");
             paneContainer.startup();
+            
+            $(window).resize(function(){
+            	var height = document.body.clientHeight - $("#header").height() - $("#footer").height();
+            	$("#paneContainer").css("height", height);
+            	paneContainer.resize();
+            });
             
 			// 添加主地图
 			var mapPane = new MapPane({
@@ -34,6 +42,18 @@ define([
 				type: "MapABC"
 			});
 			paneContainer.addChild(mapPane);
+			
+			var mapPane1 = new MapPane({
+				title: "测试地图",
+				closable: false,
+				type: "MapABC"
+			});
+			paneContainer.addChild(mapPane1);
+			
+			$("#button1").click(function () { 
+				paneContainer.selectChild(mapPane1);
+				console.debug(mapPane1);
+			});
 			
 			//mapPane.mapTool.testDrawTrace();
 			//mapPane.mapTool.testDrawTrace();

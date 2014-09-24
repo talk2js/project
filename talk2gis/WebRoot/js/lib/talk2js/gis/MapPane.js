@@ -38,7 +38,7 @@ define([
 
 	return declare([ContentPane], {
 
-    	style: "width:100%; height:100%; padding:0px; overflow:hidden;",
+    	style: "width:100%; height:100%; padding:0px; margin:0px; overflow:hidden;",
     	
         /**
         * openlayers地图实例
@@ -157,43 +157,24 @@ define([
 		
         resize: function(){
         	this.inherited(arguments);
+        	// 面板变换尺寸后更新地图尺寸
         	this.map.updateSize();
         },
         
         _initMap: function(){
-        	var h = domGeom.position(this.domNode).h;
-        	var w = domGeom.position(this.domNode).w;
-        	var width, height;
-        	if(h == null || h == 0 || w == null || w == 0){
-        		height = "100%";
-        		width = "100%";
-        	} else {
-        		height = h + "px";
-        		width = w + "px";
-        	}
-        	var mapNode = domConstruct.create('div');
-        	this.domNode.appendChild(mapNode);
-        	domStyle.set(mapNode, {
-        		position: "absolute",
-        		zIndex: 1,
-            	width: width,
-            	height: height,
-            	top: "0px"
-        	});
-			// 创建地图对象
+        	// 创建地图对象
+        	var mapNode = domConstruct.create("div", { 
+        		style: { 
+        			position: "absolute",
+            		zIndex: 1,
+                	width: "100%",
+                	height: "100%",
+                	left: "0px",
+                	top: "0px" 
+        		} 
+        	}, this.domNode);
 			this.map = mapFactory.getMap(mapNode, this.type);
-			// 面板变换尺寸后更新地图尺寸
-			this.on('show', lang.hitch(this, function () {
-			    setTimeout(lang.hitch(this, function () {
-			        this.map.updateSize();
-			    }), 100);
-			}));
-			// 延迟更新地图，防止IE8下页面卡死
-			this.resizeHandler = on(window, "resize", lang.hitch(this, function () {
-			    setTimeout(lang.hitch(this, function () {
-			        this.map.updateSize();
-			    }, 100));
-			}));
+			
 			// 创建更新车辆图层定时任务
 			if(this.isUpdateVehicleLayer){
 				this._initVehicleLayer();
@@ -211,7 +192,6 @@ define([
 					}
 				}), this._interval);
 			}
-			
         },
         
         _initPopupList: function(){
@@ -362,10 +342,6 @@ define([
         		clearInterval(this._task);
         		this._task = null;
         	}
-        	if (this.resizeHandler) {
-                this.resizeHandler.remove();
-                this.resizeHandler = null;
-            }
             if (this.mapContextMenu) {
                 this.mapContextMenu.destroy();
                 this.mapContextMenu = null;

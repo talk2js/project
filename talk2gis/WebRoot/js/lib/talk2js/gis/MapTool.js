@@ -86,7 +86,7 @@ define([
         		//marker.lonlat = lonlat;
                 var pixel = this.china317Map.map.getLayerPxFromLonLat(lonlat);
                 marker.moveTo(pixel);
-			}), 3 * 1000);
+			}), 6 * 1000);
         },
         
         testDrawTrace: function(){
@@ -130,7 +130,7 @@ define([
                 	newPoint: newPoint
                 }, "1");
                 
-			}), 3 * 1000);
+			}), 6 * 1000);
         },
         
         getRandomNum: function (Min, Max) { 
