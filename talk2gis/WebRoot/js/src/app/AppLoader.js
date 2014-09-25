@@ -18,7 +18,8 @@ define([
 
 		constructor: function(args) {
             var paneContainer = new PaneContainer({
-            	id: "paneContainer"
+            	id: "paneContainer",
+            	paneControllerId: "paneController"
             }, "paneContainer");
             paneContainer.startup();
             
@@ -32,18 +33,20 @@ define([
 			
 			var mapPane1 = new MapPane({
 				title: "测试地图",
-				closable: false,
+				closable: true,
 				type: "MapABC"
 			});
 			paneContainer.addChild(mapPane1);
 			
-			$("#button1").click(function () { 
+			//paneContainer.selectChild(mapPane);
+			
+/*			$("#button1").click(function () { 
 				paneContainer.selectChild(mapPane1);
 			});
 			
 			$("#button2").click(function () { 
 				paneContainer.selectChild(mapPane);
-			});
+			});*/
 			
 			//mapPane.mapTool.testDrawTrace();
 			//mapPane.mapTool.testDrawTrace();

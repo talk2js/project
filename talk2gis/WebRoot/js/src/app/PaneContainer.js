@@ -11,11 +11,15 @@ define([
 	"dojo/sniff",
 	
 	"dijit/registry",
-	"dijit/layout/StackContainer"
+	"dijit/layout/StackContainer",
+	
+	"talk2js/component/TabButton"
 ], function(declare, lang, dom, domGeometry, domStyle, domClass, aspect, baseFx, fx, has, 
-		registry, StackContainer) {
+		registry, StackContainer, TabButton) {
 
 	return declare([StackContainer], {
+		
+		paneControllerId: null,
 		
 		buildRendering: function(){
 			this.inherited(arguments);
@@ -37,6 +41,46 @@ define([
             	$(this.domNode).css("height", this._getCurrentHeight());
             	this.resize();
             }));
+			
+			this.initTabButtonListener();
+		},
+		
+		initTabButtonListener: function(){
+			var me = this;
+			aspect.before(me, "addChild", function(pane){
+				pane.tabButton = new TabButton({
+					title: pane.title + "",
+					closable: pane.closable,
+					paneId: pane.id
+				});
+				$("#" + me.paneControllerId).append(pane.tabButton.domNode);
+				
+				pane.tabButton.on("selectTab", function(){
+					var panes = me.getChildren();
+					for (var i = 0; i < panes.length; i++) {
+						if(this.paneId == panes[i].id){
+							me.selectChild(panes[i]);
+							return ;
+						}
+					}
+				});
+				
+				pane.tabButton.on("closeTab", function(){
+					alert("close");
+				});
+			}, true);
+			
+			aspect.before(me, "selectChild", function(pane){
+				if(me.selectedChildWidget && me.selectedChildWidget.tabButton){
+					$(me.selectedChildWidget.tabButton.buttonNode).css("background", 
+						"linear-gradient(rgba(39, 40, 34, 0.8) 0%, rgba(106, 107, 109, 0.8) 100%)");
+				}
+			}, true);
+			
+			aspect.after(me, "selectChild", function(pane){
+				$(pane.tabButton.buttonNode).css("background", 
+					"linear-gradient(rgba(39, 40, 34, 1) 0%, rgba(60, 61, 57, 1) 100%)");
+			}, true);
 		},
 		
 		_getCurrentHeight: function(){
