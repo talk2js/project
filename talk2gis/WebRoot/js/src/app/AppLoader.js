@@ -25,31 +25,32 @@ define([
             
 			// 添加主地图
 			var mapPane = new MapPane({
-				title: "地图监控",
+				title: "主地图",
 				closable: false,
 				type: "MapABC"
 			});
 			paneContainer.addChild(mapPane);
 			
 			var mapPane1 = new MapPane({
-				title: "测试地图",
+				title: "测试",
 				closable: true,
 				type: "MapABC"
 			});
 			paneContainer.addChild(mapPane1);
 			
-			//paneContainer.selectChild(mapPane);
-			
-/*			$("#button1").click(function () { 
-				paneContainer.selectChild(mapPane1);
+			var mapPane2 = new MapPane({
+				title: "地图监控",
+				closable: true,
+				type: "MapABC"
 			});
+			paneContainer.addChild(mapPane2);
 			
-			$("#button2").click(function () { 
-				paneContainer.selectChild(mapPane);
-			});*/
-			
-			//mapPane.mapTool.testDrawTrace();
-			//mapPane.mapTool.testDrawTrace();
+			var mapPane3 = new MapPane({
+				title: "轨迹回放",
+				closable: true,
+				type: "MapABC"
+			});
+			paneContainer.addChild(mapPane3);
 		}
 
 	});

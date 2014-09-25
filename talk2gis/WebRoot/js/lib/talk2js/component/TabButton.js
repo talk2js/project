@@ -27,9 +27,21 @@ define([
         
         title: "",
         
+        closable: true,
+        
         closeImg: require.toUrl("../resources/images/close.png"),
         
 		postMixInProperties: function(){
+		},
+		
+		buildRendering: function(){
+			this.inherited(arguments);
+			
+			if(this.closable){
+				$(this.closeNode).css("visibility", "visible");
+			} else {
+				$(this.closeNode).css("visibility", "hidden");
+			}
 		},
 		
         postCreate: function () {

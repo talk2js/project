@@ -66,7 +66,15 @@ define([
 				});
 				
 				pane.tabButton.on("closeTab", function(){
-					alert("close");
+					var panes = me.getChildren();
+					for (var i = 0; i < panes.length; i++) {
+						if(this.paneId == panes[i].id){
+							this.destroy();
+							panes[i].tabButton = null;
+							me.closeChild(panes[i]);
+							return ;
+						}
+					}
 				});
 			}, true);
 			
