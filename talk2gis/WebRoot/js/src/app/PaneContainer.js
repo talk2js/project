@@ -6,12 +6,13 @@ define([
 	"dojo/dom-style",
 	"dojo/dom-class",
 	"dojo/aspect",
+	"dojo/_base/fx",
 	"dojo/fx",
 	"dojo/sniff",
 	
 	"dijit/registry",
 	"dijit/layout/StackContainer"
-], function(declare, lang, dom, domGeometry, domStyle, domClass, aspect, fx, has, 
+], function(declare, lang, dom, domGeometry, domStyle, domClass, aspect, baseFx, fx, has, 
 		registry, StackContainer) {
 
 	return declare([StackContainer], {
@@ -114,17 +115,15 @@ define([
 			page._set("selected", true);
 
 			if(page._wrapper){	// false if not started yet
-				// 先移动到最左边
-				$(page._wrapper).css("left", -document.body.clientWidth + "px");
+				// 先设置透明
+				$(page._wrapper).css("opacity", "0");
 				// 设置显示
 				domClass.replace(page._wrapper, "dijitVisible", "dijitHidden");
-				// 移动到页面范围中
-				fx.slideTo({
-                    node: page._wrapper,
-                    left: 0 + "",
-                    duration: 800,
-                    units: "px"
-                }).play();
+				// 渐进显示效果
+				baseFx.fadeIn({
+					node: page._wrapper,
+			        duration: 800
+				}).play();
 			}
 
 			return (page._onShow && page._onShow()) || true;
