@@ -1,3 +1,7 @@
+body {
+	background: #eaeaea url(../images/body_bg.png);
+}
+
 .header {
 	width: 100%;
 	padding: 0px;

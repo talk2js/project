@@ -9,31 +9,18 @@ define([
 	"dijit/layout/TabContainer",
 	"dijit/layout/StackContainer",
 	
-	"talk2js/gis/MapPane"
-], function(declare, lang, dom, domGeom, domStyle, registry, TabContainer, StackContainer, MapPane) {
+	"talk2js/gis/MapPane",
+	"./PaneContainer"
+], function(declare, lang, dom, domGeom, domStyle, registry, TabContainer, StackContainer, 
+		MapPane, PaneContainer) {
 
 	return declare([], {
 
 		constructor: function(args) {
-			var height = document.body.clientHeight - $("#header").height() - $("#footer").height();
-			
-			$("#paneContainer").css({
-				"height": height + "px", 
-				"width": "100%",
-				"position": "absoulte",
-				"z-index": "10",
-				"left": "0px",
-				"top": $("#header").height() + "px"
-			});
-			
-            var paneContainer = new StackContainer({}, "paneContainer");
+            var paneContainer = new PaneContainer({
+            	id: "paneContainer"
+            }, "paneContainer");
             paneContainer.startup();
-            
-            $(window).resize(function(){
-            	var height = document.body.clientHeight - $("#header").height() - $("#footer").height();
-            	$("#paneContainer").css("height", height);
-            	paneContainer.resize();
-            });
             
 			// 添加主地图
 			var mapPane = new MapPane({
@@ -52,7 +39,10 @@ define([
 			
 			$("#button1").click(function () { 
 				paneContainer.selectChild(mapPane1);
-				console.debug(mapPane1);
+			});
+			
+			$("#button2").click(function () { 
+				paneContainer.selectChild(mapPane);
 			});
 			
 			//mapPane.mapTool.testDrawTrace();
