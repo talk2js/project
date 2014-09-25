@@ -16,7 +16,7 @@
     
 	return declare([_WidgetBase, _TemplatedMixin], {
 		
-        templateString: '<div style=\"position:absolute; width:21px; height:25px; z-index:100;\"></div>',
+        templateString: '<div style=\"position:absolute; top:40px; right:50px; width:21px; height:25px; z-index:100;\"></div>',
 
         map: null,
         
@@ -52,19 +52,6 @@
             	}
             }
             
-            on(window, "resize", lang.hitch(this, function () {
-			    setTimeout(lang.hitch(this, function () {
-			        this._updatePosition();
-			    }, 100));
-			}));
-        },
-        
-        _updatePosition: function(){
-        	//var mapWidth = domGeom.position(this.map.div).w;
-            domStyle.set(this.domNode, {
-            	top: "40px",
-            	right: "50px"
-        	});
         },
 
         _createImageNode: function(baseLayer, selected){
@@ -93,8 +80,6 @@
         
         startup: function () {
             this.inherited(arguments);
-            
-            this._updatePosition();
             
             on(this.domNode, mouse.enter, lang.hitch(this, function(){
             	this._expand();
