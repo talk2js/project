@@ -2,6 +2,11 @@ body {
 	background: #eaeaea url(../images/body_bg.png);
 }
 
+.appPane {
+	width: 100%;
+	padding: 1px 0px 0px 0px;
+}
+
 .header {
 	width: 100%;
 	padding: 0px;

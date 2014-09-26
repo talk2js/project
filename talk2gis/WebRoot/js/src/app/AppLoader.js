@@ -9,10 +9,11 @@ define([
 	"dijit/layout/TabContainer",
 	"dijit/layout/StackContainer",
 	
+	"./PaneContainer",
 	"talk2js/gis/MapPane",
-	"./PaneContainer"
+	"app/alarm/Alarm"
 ], function(declare, lang, dom, domGeom, domStyle, registry, TabContainer, StackContainer, 
-		MapPane, PaneContainer) {
+		PaneContainer, MapPane, Alarm) {
 
 	return declare([], {
 
@@ -24,33 +25,28 @@ define([
             paneContainer.startup();
             
 			// 添加主地图
-			var mapPane = new MapPane({
+			paneContainer.addChild(new MapPane({
 				title: "主地图",
 				closable: false,
 				type: "MapABC"
-			});
-			paneContainer.addChild(mapPane);
+			}));
 			
-			var mapPane1 = new MapPane({
+			paneContainer.addChild(new MapPane({
 				title: "测试",
 				closable: true,
 				type: "MapABC"
-			});
-			paneContainer.addChild(mapPane1);
+			}));
 			
-			var mapPane2 = new MapPane({
+			paneContainer.addChild(new MapPane({
 				title: "地图监控",
 				closable: true,
 				type: "MapABC"
-			});
-			paneContainer.addChild(mapPane2);
+			}));
 			
-			var mapPane3 = new MapPane({
-				title: "轨迹回放",
-				closable: true,
-				type: "MapABC"
-			});
-			paneContainer.addChild(mapPane3);
+			paneContainer.addChild(new Alarm({
+				title: "告警信息管理",
+				closable: true
+			}));
 		}
 
 	});
