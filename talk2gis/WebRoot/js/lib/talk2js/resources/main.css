@@ -25,11 +25,16 @@ html,body {
 	overflow: hidden;
 }
 
-.addIcon
-{
-    background: url(./images/add.png);
-    width: 16px;
-    height: 16px;
+.addIcon {
+	background: url(./images/add.png);
+	width: 16px;
+	height: 16px;
+}
+
+.warningIcon {
+	background: url(./images/warning.png);
+	width: 16px;
+	height: 16px;
 }
 
 /* 地图右键菜单 */

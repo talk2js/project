@@ -56,8 +56,8 @@ define([
 
         templateString:
 		'<li dojoAttachEvent="onclick: restore" class="mapPaneDockNode">' +
-			'<span dojoAttachPoint="restoreNode" class="mapPaneDockRestoreButton" dojoAttachEvent="onclick: restore"></span>' +
-			'<span class="mapPaneDockTitleNode" dojoAttachPoint="titleNode">${title}</span>' +
+			
+			'<button dojoAttachPoint="restoreNode" class="mapPaneDockRestoreButton" dojoAttachEvent="onclick: restore"><span class="dockIcon"></span>${title}</button>' +
 		'</li>',
 
         restore: function () {

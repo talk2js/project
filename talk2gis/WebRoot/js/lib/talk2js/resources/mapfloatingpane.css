@@ -5,7 +5,6 @@
 	position: absolute;
 	top: 170px;
 	right: 15px;
-	width: 100px;
 	height: 380px;
 	z-index: 999;
 	padding: 0;
@@ -19,30 +18,36 @@
 }
 
 .mapPaneDockNode {
-	background: url('./images/panedock/dock_s.png') repeat-x scroll left;
-	border: 1px solid #43a3fe;
 	cursor: pointer;
-	height: 20px;
+	height: 30px;
 	list-style: none outside none;
 	margin-top: 8px;
 	padding-top: 3px;
 	padding-left: 5px;
-	width: 85px;
+}
+
+.dockIcon {
+	float: left;
+	background: url(./images/tag.png);
+	width: 16px;
+	height: 16px;
+	margin-top: 3px;
+	margin-right: 3px;
 }
 
 .mapPaneDockRestoreButton {
-	background: url('./images/panedock/tag6.png') no-repeat center center;
-	width: 16px;
-	height: 16px;
+	background: linear-gradient(rgba(39, 40, 34, 0.8) 0%,
+		rgba(106, 107, 109, 0.8) 100%);
+	border: 1px solid #cbd0d6;
+	border-radius: 3px;
+	box-shadow: 0px 5px 10px #adadad;
+	cursor: pointer;
 	overflow: hidden;
 	float: left;
-	margin-left: 2px;
-	margin-top: 1px;
-}
-
-.mapPaneDockTitleNode {
-	overflow: hidden;
-	margin-left: 4px;
+	outline: none;
+	height: 32px;
+	text-align: center;
+	font-family: "微软雅黑";
 	font-size: 13px;
 	color: #fff;
 }
