@@ -38,7 +38,6 @@
 }
 
 .dropDownMenu .dropDownContainer {
-	background-color: #FFF;
 	background-image: linear-gradient(rgba(56, 56, 56, 0.8) 0%, rgba(60, 60, 60, 0.6) 100%);
 	background-color: transparent;
 	background-position: center bottom;
@@ -47,37 +46,41 @@
 	padding-right: 0;
 	border-radius: 4px;
 	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
-	font-size: 13px;
-	font-family: "微软雅黑";
-	color: #000;
+	color: #fff;
 }
 
-.claro .dropDownMenu .dijitMenu .dijitMenuItem td {
+.tundra .dropDownMenu .dijitMenu .dijitMenuItem td {
 	padding: 5px;
+	padding-top: 3px;
+	padding-bottom: 3px;
 	padding-right: 0px;
 	border-width: 0;
 	border-color: transparent;
+	font-family: "微软雅黑";
+	font-size: 12px;
+	letter-spacing: 1px;
 }
 
-.claro .dropDownMenu .dijitMenuItem {
+.tundra .dropDownMenu .dijitMenuItem {
 	color: #FFFFFF;
 	display: block;
 	padding-left: 5px;
 }
 
-.claro .dropDownMenu .dijitMenu {
+.tundra .dropDownMenu .dijitMenu {
 	background: linear-gradient(rgba(56, 56, 56, 0.6) 0%,
 		rgba(60, 60, 60, 0.5) 100%);
 }
 
-.claro .dropDownMenu .dijitMenuItemSelected,
-.claro .dropDownMenu .dijitMenuItemHover
+.tundra .dropDownMenu .dijitMenuItemSelected,
+.tundra .dropDownMenu .dijitMenuItemHover
 	{
+	background-color: #C4C7CC;
 	color: #000;
 }
 
-.claro .dropDownMenu .dijitMenu .dijitMenuItemHover td,
-.claro .dropDownMenu .dijitMenu .dijitMenuItemSelected td
+.tundra .dropDownMenu .dijitMenu .dijitMenuItemHover td,
+.tundra .dropDownMenu .dijitMenu .dijitMenuItemSelected td
 	{
 	background: none;
 }
