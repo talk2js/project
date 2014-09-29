@@ -28,9 +28,9 @@ define([
         				width: 415,
         				height: 230
         			});
-    				var poiQuery = new PoiQuery({
+    				floatingPane.addChild(new PoiQuery({
     					mapPane: this.mapPane
-    				}, floatingPane.containerNode).startup();
+    				}));
     			}));
         	}
         }

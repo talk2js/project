@@ -35,6 +35,10 @@ define([
         	}));
         },
         
+        resize: function(){
+        	this.tabContainerNode.resize();
+        },
+        
         startup: function () {
             this.inherited(arguments);
         },

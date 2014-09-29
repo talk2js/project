@@ -48,8 +48,13 @@ define([
         	this.inherited(arguments);
         },
 
-        resize: function (dim) {
-        },
+        resize: function(){
+    		this.getChildren().forEach(function(widget){
+    			if(widget.resize){
+    				widget.resize();
+    			}
+    		});
+    	},
 
         destroy: function () {
         	if(this.standby){
