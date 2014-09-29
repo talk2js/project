@@ -49,7 +49,7 @@ define([
 			var me = this;
 			aspect.before(me, "addChild", function(pane){
 				pane.tabButton = new TabButton({
-					title: pane.title + "",
+					title : pane.title ? pane.title + "" : "无标题",
 					closable: pane.closable,
 					paneId: pane.id
 				});

@@ -7,6 +7,7 @@ define([
     "dojo/dom-style",
     "dojo/dom-construct",
     "dojo/dom-geometry",
+    "dojo/topic",
     "require",
     
     "dijit/MenuItem",
@@ -16,7 +17,7 @@ define([
     "./DropDownMenu",
     "../../menuBarConfig"
     //"dojo/text!./MenuBar.html"
-], function (declare, lang, dom, on, Memory, domStyle, domConstruct, domGeom, require, 
+], function (declare, lang, dom, on, Memory, domStyle, domConstruct, domGeom, topic, require, 
 		MenuItem, _WidgetBase, _TemplatedMixin, DropDownMenu, menuBarConfig) {
     
 	return declare([_WidgetBase, _TemplatedMixin], {
@@ -36,7 +37,13 @@ define([
             		var arr = [];
             		for(var j = 0; j < menuItems.length; j++){
             			var menuItem = new MenuItem({
-            				label: menuItems[j].label
+            				id: menuItems[j].id,
+            				label: menuItems[j].label,
+            				onClick: function(){
+            					topic.publish(this.id + "", {
+            						label: this.label
+            					});
+            				}
             			});
             			arr.push(menuItem);
             		}

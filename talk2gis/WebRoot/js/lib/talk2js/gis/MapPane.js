@@ -150,7 +150,6 @@ define([
             this.road = new Road({
             	china317Map: this
             });
-            this.poi.add2MapContextMenu();
             this.route.add2MapContextMenu();
             console.debug("[" + this.title + "] startup");
         },

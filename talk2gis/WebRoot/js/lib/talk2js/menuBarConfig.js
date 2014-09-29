@@ -1,93 +1,71 @@
 define([ {
 	img : './images/1.png',
-	text : '警情态势',
+	text : '查询',
 	menuItems : [ {
+		id: "poiQuery",
 		iconClass : "commonIcons showCaseIcon",
-		label : "警情撒点",
+		label : "兴趣点查询",
 		privilege : 'showCase'
 	}, {
+		id: "busQuery",
 		iconClass : "commonIcons showCaseIcon",
-		label : "警情明细查询",
+		label : "公交查询",
 		privilege : 'showCase'
 	}, {
-		iconClass : "commonIcons prewarningIcon",
-		label : "四色预警",
-		privilege : 'prewarning'
-	}, {
+		id: "roadQuery",
 		iconClass : "commonIcons hotmapIcon",
-		label : "热点渲染",
+		label : "道路查询",
 		privilege : 'hotmap'
 	}, {
-		iconClass : "commonIcons chartAnalysisIcon",
-		label : "图表分析",
-		privilege : 'chartAnalysis'
+		id: "distinctQuery",
+		iconClass : "commonIcons prewarningIcon",
+		label : "行政区查询",
+		privilege : 'prewarning'
 	} ]
 }, {
 	img : './images/2.png',
-	text : '勤务管理',
+	text : '地图编辑',
 	menuItems : [ {
 		iconClass : "commonIcons fourcolorWarningAssessment",
-		label : "四色预警考核",
+		label : "绘图功能",
 		privilege : 'stalkingResource'
 	}, {
 		iconClass : "commonIcons serviceLevelAssessment",
-		label : "勤务等级考核",
+		label : "编辑图形",
 		privilege : 'stalkingResource'
 	}, {
-		iconClass : "commonIcons patrolGuardAssessment",
-		label : "巡逻防范考核",
-		privilege : 'stalkingResource'
-	}, {
-		iconClass : "commonIcons rankingPoliceIntelligenceAssessment",
-		label : "警情排名考核",
-		privilege : 'stalkingResource'
-	}, {
-		iconClass : "commonIcons systemSettingIcon",
-		label : "久坐越界查询",
-		privilege : 'stalkingResource'
-	}, {
-		iconClass : "commonIcons systemSettingIcon",
-		label : "勤务统计查询",
-		privilege : 'stalkingResource'
-	}, {
-		iconClass : "commonIcons systemSettingIcon",
-		label : "勤务等级设置",
+		iconClass : "commonIcons serviceLevelAssessment",
+		label : "添加可拖拽图标",
 		privilege : 'stalkingResource'
 	} ]
 }, {
 	img : './images/3.png',
-	text : '警力态势',
+	text : '图表展示',
 	menuItems : [ {
+		id: "dojoCharts",
 		iconClass : "commonIcons policeSurveillance",
-		label : "警力监控",
+		label : "Dojo charts",
 		privilege : 'carMonitor'
 	}, {
+		id: "fusionCharts",
 		iconClass : "commonIcons carDutyIcon",
-		label : "视频监控",
+		label : "FusionCharts",
 		privilege : 'carDuty'
-	}, {
-		iconClass : "commonIcons policeInquiry",
-		label : "警力查询",
-		privilege : 'policeQuery'
-	}, {
-		iconClass : "commonIcons analogAlarmPositioning",
-		label : "模拟报警定位",
-		privilege : 'mobileAlarm'
 	} ]
 }, {
 	img : './images/4.png',
-	text : '卡口布控',
+	text : '车辆监控',
 	menuItems : [ {
 		iconClass : "commonIcons bayonetInquiry",
-		label : "卡口查询",
+		label : "车辆监控",
 		privilege : 'roadControl'
 	}, {
 		iconClass : "commonIcons carTrack",
-		label : "过车轨迹",
+		label : "轨迹回放",
 		privilege : 'roadControl'
 	}, {
 		iconClass : "commonIcons dispatchedTask",
-		label : "布控任务",
+		label : "单车跟踪",
 		privilege : 'roadControl'
 	} ]
 }, {
@@ -95,7 +73,7 @@ define([ {
 	text : '系统设置',
 	menuItems : [ {
 		iconClass : "commonIcons theme",
-		label : "主题",
+		label : "参数设置",
 		privilege : 'theme'
 	}, {
 		iconClass : "commonIcons quit",

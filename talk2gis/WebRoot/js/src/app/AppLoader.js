@@ -9,11 +9,12 @@ define([
 	"dijit/layout/TabContainer",
 	"dijit/layout/StackContainer",
 	
-	"./PaneContainer",
 	"talk2js/gis/MapPane",
-	"app/alarm/Alarm"
+	"app/PaneContainer",
+	"app/alarm/AlarmModule",
+	"app/poiquery/PoiQueryModule"
 ], function(declare, lang, dom, domGeom, domStyle, registry, TabContainer, StackContainer, 
-		PaneContainer, MapPane, Alarm) {
+		MapPane, PaneContainer, AlarmModule, PoiQueryModule) {
 
 	return declare([], {
 
@@ -25,28 +26,18 @@ define([
             paneContainer.startup();
             
 			// 添加主地图
-			paneContainer.addChild(new MapPane({
+            var mapPane = new MapPane({
+				id: "mainMapPane",
 				title: "主地图",
 				closable: false,
 				type: "MapABC"
-			}));
+			});
+			paneContainer.addChild(mapPane);
 			
-			paneContainer.addChild(new MapPane({
-				title: "测试",
-				closable: true,
-				type: "MapABC"
-			}));
-			
-			paneContainer.addChild(new MapPane({
-				title: "地图监控",
-				closable: true,
-				type: "MapABC"
-			}));
-			
-			paneContainer.addChild(new Alarm({
-				title: "告警信息管理",
-				closable: true
-			}));
+			new AlarmModule();
+			new PoiQueryModule({
+				mapPane: mapPane
+			});
 		}
 
 	});
