@@ -31,7 +31,7 @@ define([
 		
 		POI_LAYER_ID: "poiLayer",
 		
-		imgPath: require.toUrl("../resources/images/poi/school32.png"),
+		imgPath: require.toUrl("../resources/images/poi/p4.png"),
 		
 		resultPane: null,
 		
@@ -282,7 +282,7 @@ define([
 					var resource = resources[i];
 					var xy = mercator.lonLat2Mercator(parseFloat(resource.x), parseFloat(resource.y));
 				    var lonlat = new OpenLayers.LonLat(xy.x, xy.y);
-				    var size = new OpenLayers.Size(32, 32);
+				    var size = new OpenLayers.Size(16, 16);
 				    var offset = new OpenLayers.Pixel(-(size.w / 2), -(size.h / 2));
 				    var icon = new OpenLayers.Icon(this.imgPath, size, offset);
 				    var marker = new OpenLayers.Marker(lonlat, icon);

@@ -24,6 +24,15 @@ define([
 		
         postCreate: function () {
         	this.inherited(arguments);
+        	
+        	on(this.queryPoiByCenterPointButton, "click", lang.hitch(this, function(){
+        		this.mapPane.poi.queryPoiByCenterPoint({
+        			keyword: "游乐场",
+        			range: 2000,
+        			lon: 13516149.5,
+        			lat: 3656365.2
+        		});
+        	}));
         },
         
         startup: function () {
