@@ -16,7 +16,7 @@ define([
 
     var dock = declare([Dock], {
 
-        templateString: '<div class="mapPaneDock"><ul dojoAttachPoint="containerNode" class="mapPaneDockList"></ul></div>',
+        templateString: '<div class="mapPaneDock"><ul dojoAttachPoint="containerNode"></ul></div>',
 
         /**
         * @override
