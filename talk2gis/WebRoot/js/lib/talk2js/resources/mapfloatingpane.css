@@ -54,10 +54,9 @@
 .mapFloatingPaneTitle {
 	font-family: "微软雅黑";
 	font-size: 13px;
-	height: 25px;
-	padding-top: 9px;
+	height: 28px;
+	padding-top: 6px;
 	padding-left: 10px;
-	padding-bottom: 3px;
 	color: #fff;
 	cursor: move;
 }
@@ -76,19 +75,20 @@
 
 .mapFloatingPaneMinimizeIcon {
 	background: url('./images/floatingpane/min.png');
-	width: 24px;
-	height: 24px;
-	margin-top: -2px;
+	width: 16px;
+	height: 16px;
+	margin-top: 4px;
+	margin-right: 6px;
 	float: right;
 	cursor: pointer;
 }
 
 .mapFloatingPaneCloseIcon {
 	background: url('./images/floatingpane/close.png');
-	width: 24px;
-	height: 24px;
-	margin-top: -2px;
-	margin-right: 7px;
+	width: 16px;
+	height: 16px;
+	margin-top: 4px;
+	margin-right: 8px;
 	float: right;
 	cursor: pointer;
 }

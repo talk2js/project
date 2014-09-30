@@ -248,7 +248,7 @@ define([
 			});
 			grid = new EnhancedGrid({
 				store : store,
-				rowSelector: "20px",
+				rowSelector: "18px",
 				structure : [{
 					name : "名称",
 					field : "name",
