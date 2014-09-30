@@ -97,16 +97,3 @@ html,body {
 	bottom: 0;
 	z-index: 1000;
 }
-
-/* 公交路线查询结果面板 */
-.bussline-resultPane {
-	height: 160px;
-}
-
-.bussline-childrenResultPane {
-	height: 230px;
-}
-
-.mapFloatingPaneResultGrid {
-	height: 25em;
-}

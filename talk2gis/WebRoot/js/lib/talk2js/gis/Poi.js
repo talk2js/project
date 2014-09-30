@@ -3,27 +3,23 @@ define([
 	"dojo/_base/lang", 
 	"dojo/Deferred",
 	"dojo/aspect",
-	"dojo/store/Memory",
+	"dojo/data/ItemFileWriteStore",
 	"require",
 	
 	"dijit/form/TextBox",
     "dijit/MenuItem",
     "dijit/MenuSeparator",
-    
-	"dgrid/OnDemandGrid",
-    "dgrid/tree",
-    "dgrid/editor",
-    "dgrid/Keyboard",
-    "dgrid/Selection",
-    "dgrid/selector",
-    "dgrid/ColumnSet",
-    "dgrid/util/mouse",
+
+    "dojox/grid/EnhancedGrid",
+    "dojox/grid/enhanced/plugins/Pagination",
+	"dojox/grid/enhanced/plugins/IndirectSelection",
     
     "./openlayers/control/ZoomBoxControl",
     "./util/mercator",
 	"./rest/mapabc/poi"
-], function(declare, lang, Deferred, aspect, Memory, require, TextBox, MenuItem, MenuSeparator, 
-		OnDemandGrid, tree, editor, Keyboard, Selection, selector, ColumnSet, mouse, ZoomBoxControl, mercator, poi) {
+], function(declare, lang, Deferred, aspect, ItemFileWriteStore, require, TextBox, MenuItem, 
+		MenuSeparator, EnhancedGrid, Pagination, IndirectSelection, ZoomBoxControl, 
+		mercator, poi) {
 
 	var obj = declare([], {
 
@@ -235,8 +231,8 @@ define([
 			}
 			this.resultPane = this.china317Map.createFloatingPane({
 				title: "查询结果",
-				width: 300,
-				height: 342
+				width: 330,
+				height: 350
 			});
 			// 关闭面板后销毁图层
 			aspect.after(this.resultPane, 'close', lang.hitch(this, function () {
@@ -244,27 +240,32 @@ define([
 				this.resultPane = null;
 			}));
 				
-			var store = new Memory({
-				idProperty: "pguid",
-				data: results
+			var store = new ItemFileWriteStore({
+				data : {
+					identifier : "pguid",
+					items : results
+				}
 			});
-			var grid = new declare([OnDemandGrid, Keyboard, Selection])({
-				className: "mapFloatingPaneResultGrid",
-				store: store,
-			 	columns: [
-			        { label: "名称", field: "name", sortable: false },
-			        { label: "地址", field: "address", sortable: false }
-			    ]
+			grid = new EnhancedGrid({
+				store : store,
+				rowSelector: "20px",
+				structure : [{
+					name : "名称",
+					field : "name",
+					width : "40%"
+				},{
+					name : "地址",
+					field : "address",
+					width : "60%"
+				}],
+				style : "width:100%;"
 			});
 			this.resultPane.addChild(grid);
-			grid.on("click", lang.hitch(this, function(e){
-				var row = grid.cell(e).row;
-				if(!row){
-					return ;
-				}
-				var rowData = grid.cell(e).row.data;
-				//console.debug(rowData);
-				var xy = mercator.lonLat2Mercator(parseFloat(rowData.x), parseFloat(rowData.y));
+			grid.on("cellClick", lang.hitch(this, function(e){
+				grid.selection.select(e.rowIndex);
+				var item = grid.getItem(e.rowIndex);
+				//console.debug(item);
+				var xy = mercator.lonLat2Mercator(parseFloat(item.x + ""), parseFloat(item.y + ""));
 				var lonlat = new OpenLayers.LonLat(xy.x, xy.y);
 				this.china317Map.map.moveTo(lonlat, 16);
 			}));
