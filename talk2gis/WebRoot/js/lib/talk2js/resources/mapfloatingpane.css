@@ -18,11 +18,11 @@
 
 .dockIcon {
 	float: left;
-	background: url(./images/tag.png);
+	background: url(./images/floatingpane/tag.png);
 	width: 16px;
 	height: 16px;
 	margin-top: 2px;
-	margin-right: 4px;
+	margin-right: 6px;
 }
 
 .mapPaneDockRestoreButton {
@@ -32,7 +32,7 @@
 	border-radius: 3px;
 	cursor: pointer;
 	overflow: hidden;
-	float: left;
+	float: right;
 	outline: none;
 	height: 32px;
 	text-align: center;
@@ -83,6 +83,12 @@
 	cursor: pointer;
 }
 
+.mapFloatingPaneMinimizeIcon:hover {
+	background: url('./images/floatingpane/min_hover.png');
+	width: 16px;
+	height: 16px;
+}
+
 .mapFloatingPaneCloseIcon {
 	background: url('./images/floatingpane/close.png');
 	width: 16px;
@@ -93,12 +99,8 @@
 	cursor: pointer;
 }
 
-.mapFloatingResizeHandle {
-	background: url('./images/floatingpane/resize.png');
-	position: absolute;
-	right: 0;
-	bottom: 0;
+.mapFloatingPaneCloseIcon:hover {
+	background: url('./images/floatingpane/close_hover.png');
 	width: 16px;
 	height: 16px;
-	cursor: nw-resize;
 }
