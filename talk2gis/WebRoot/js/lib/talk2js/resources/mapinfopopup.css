@@ -76,13 +76,18 @@
 }
 
 .mapInfoPopup .mapInfoPopupCloseImg {
-	width: 16px;
-	height: 16px;
-	background: url(images/close1.png) no-repeat;
-	margin-top: 6px;
-	margin-left: 150px;
-	margin-right: 6px;
+	width: 12px;
+	height: 12px;
+	background: url(images/popup_close.png) no-repeat;
+	margin-top: 7px;
+	margin-left: 154px;
 	cursor: pointer;
+}
+
+.mapInfoPopup .mapInfoPopupCloseImg:hover {
+	width: 12px;
+	height: 12px;
+	background: url(images/popup_close_hover.png) no-repeat;
 }
 
 .mapInfoPopup .mapInfoPopupSeparator {

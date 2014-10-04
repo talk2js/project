@@ -63,9 +63,9 @@
 
 .mapFloatingPaneCanvas {
 	background-color: #fff;
-	margin-left: 3px;
-	margin-right: 3px;
-	border-radius: 1px;
+	margin-left: 2px;
+	margin-right: 4px;
+	/* border-radius: 1px; */
 }
 
 .mapFloatingPaneContent {
