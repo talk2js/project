@@ -258,7 +258,7 @@ define([
 					field : "address",
 					width : "60%"
 				}],
-				style : "width:100%;"
+				style : "width:100%; height:100%;"
 			});
 			this.resultPane.addChild(grid);
 			grid.on("cellClick", lang.hitch(this, function(e){

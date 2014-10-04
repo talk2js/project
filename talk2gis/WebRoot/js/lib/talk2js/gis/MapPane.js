@@ -281,7 +281,7 @@ define([
 				title: title,
 				dockable: dockable,
 				closable: closable,
-				dockTo: this.dock.id,
+				dockTo: this.dock,
 				style: 'width:' + width + 'px; height:' + height + 'px; position:absolute; top:30px; left:120px; z-index:15'
 			}, paneDom);
 			pane.startup();

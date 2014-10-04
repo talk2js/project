@@ -61,16 +61,10 @@
 	cursor: move;
 }
 
-.mapFloatingPaneCanvas {
-	background-color: #fff;
-	margin-left: 2px;
-	margin-right: 4px;
-	/* border-radius: 1px; */
-}
-
 .mapFloatingPaneContent {
-	height: 100%;
-	width: 100%;
+	background-color: #fff;
+	margin-left: 3px;
+	margin-right: 3px;
 }
 
 .mapFloatingPaneMinimizeIcon {

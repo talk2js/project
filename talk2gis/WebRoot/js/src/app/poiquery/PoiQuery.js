@@ -25,7 +25,7 @@ define([
         postCreate: function () {
         	this.inherited(arguments);
         	
-        	on(this.queryPoiByCenterPointButton, "click", lang.hitch(this, function(){
+        	on(this.queryNode, "click", lang.hitch(this, function(){
         		this.mapPane.poi.queryPoiByCenterPoint({
         			keyword: "游乐场",
         			range: 2000,

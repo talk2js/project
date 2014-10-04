@@ -1,5 +1,5 @@
 <div style="width:100%; height:100%;">
-	<div data-dojo-attach-point="tabContainerNode" data-dojo-type="dijit/layout/AccordionContainer" style="width:100%; height:100%;">
+	<div data-dojo-attach-point="tabContainerNode" data-dojo-type="dijit/layout/AccordionContainer">
 	
 		<div title="中心点关键字周边搜索" data-dojo-type="dijit/layout/ContentPane">
 			<table cellpadding="10" cellspacing="10">
@@ -33,10 +33,7 @@
 		    		<td><div data-dojo-type="dijit/form/TextBox" data-dojo-attach-point="keywordNode"
 		    				data-dojo-props="value:'酒店'"></div></td>
 		    	</tr>
-		    	<tr>
-		    		<td><div data-dojo-type="dijit/form/Button" data-dojo-attach-point="queryNode">查询</div></td>
-		    		<td><div data-dojo-type="dijit/form/Button" data-dojo-attach-point="queryClusterNode">查询(聚簇)</div></td>
-		    	</tr>
+		    	
 		    </table>
 		</div>
 		
@@ -61,10 +58,6 @@
 		    		<td>纬度</td>
 		    		<td><div data-dojo-type="dijit/form/TextBox" data-dojo-attach-point="latNode"
 		    				data-dojo-props="value:3656365.2"></div></td>
-		    	</tr>
-		    	<tr>
-		    		<td><div data-dojo-type="dijit/form/Button" data-dojo-attach-point="queryPoiByCenterPointButton">查询</div></td>
-		    		<td><div data-dojo-type="dijit/form/Button" data-dojo-attach-point="queryClusterNode">查询(聚簇)</div></td>
 		    	</tr>
 		    </table>
 		</div>
@@ -100,15 +93,16 @@
 		    		<td><div data-dojo-type="dijit/form/TextBox" data-dojo-attach-point="keywordNode"
 		    				data-dojo-props="value:'游乐场'"></div></td>
 		    	</tr>
-		    	<tr>
-		    		<td><div data-dojo-type="dijit/form/Button" data-dojo-attach-point="queryNode">查询</div></td>
-		    		<td><div data-dojo-type="dijit/form/Button" data-dojo-attach-point="queryClusterNode">查询(聚簇)</div></td>
-		    	</tr>
 		    </table>
 		</div>
 		
 		<div title="空间查询" data-dojo-type="dijit/layout/ContentPane">
 			
 		</div>
+	</div>
+	
+	<div style="margin-top:5px; margin-left:180px;">
+		<div data-dojo-type="dijit/form/Button" data-dojo-attach-point="queryNode">查询</div></td>
+		<div data-dojo-type="dijit/form/Button" data-dojo-attach-point="queryClusterNode">查询(聚簇)</div></td>
 	</div>
 </div>

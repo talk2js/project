@@ -26,7 +26,7 @@ define([
     					id: "poiQueryFloatingPane",
         				title: "兴趣点查询",
         				width: 320,
-        				height: 340
+        				height: 320
         			});
     				floatingPane.addChild(new PoiQuery({
     					mapPane: this.mapPane
