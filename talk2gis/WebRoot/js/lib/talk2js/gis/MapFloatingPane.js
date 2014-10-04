@@ -77,8 +77,6 @@ define([
 		postCreate : function() {
 			this.inherited(arguments);
 
-			console.debug(this.titleIcon);
-			
 			var p = domGeom.position(this.domNode);
 			var p1 = domGeom.position(this.focusNode);
 			domStyle.set(this.containerNode, {
