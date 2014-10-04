@@ -29,7 +29,7 @@ define([
         
         closable: true,
         
-        closeImg: require.toUrl("../resources/images/close.png"),
+        closeImg: require.toUrl("../resources/images/close_yellow.png"),
         
 		postMixInProperties: function(){
 		},

@@ -66,13 +66,6 @@ define([
 
 		templateString : template,
 
-		attributeMap : lang.delegate(Widget.prototype.attributeMap, {
-			title : {
-				type : "innerHTML",
-				node : "titleNode"
-			}
-		}),
-
 		postCreate : function() {
 			this.inherited(arguments);
 
