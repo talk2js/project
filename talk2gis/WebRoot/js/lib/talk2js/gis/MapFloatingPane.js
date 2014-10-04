@@ -48,10 +48,12 @@ define([
 		// Title to use in the header
 		title : "",
 
+		titleIcon: null,
+		
 		// dockTo: DomNode?
 		// if empty, will create private layout.Dock that scrolls with viewport
 		// on bottom span of viewport.
-		dockTo : "",
+		dockTo : null,
 
 		// duration: Integer
 		// Time is MS to spend toggling in/out node
@@ -59,16 +61,24 @@ define([
 
 		// node in the dock (if docked)
 		_dockNode : null,
-
+		
 		_allFPs : [],
 
 		_startZ : 100,
 
 		templateString : template,
 
+		postMixInProperties: function(){
+			if(this.titleIcon == null){
+				this.titleIcon = "queryTitleIcon";
+			}
+		},
+		
 		postCreate : function() {
 			this.inherited(arguments);
 
+			console.debug(this.titleIcon);
+			
 			var p = domGeom.position(this.domNode);
 			var p1 = domGeom.position(this.focusNode);
 			domStyle.set(this.containerNode, {

@@ -232,7 +232,8 @@ define([
 			this.resultPane = this.china317Map.createFloatingPane({
 				title: "查询结果",
 				width: 330,
-				height: 350
+				height: 350,
+				titleIcon: "infoTitleIcon"
 			});
 			// 关闭面板后销毁图层
 			aspect.after(this.resultPane, 'close', lang.hitch(this, function () {

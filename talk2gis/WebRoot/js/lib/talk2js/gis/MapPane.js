@@ -266,6 +266,7 @@ define([
         	var width = params.width;
         	var height = params.height;
         	var position = params.position;
+        	var titleIcon = params.titleIcon;
         	var dockable = true;
         	if (params.dockable === false) {
         		dockable = false;
@@ -282,6 +283,7 @@ define([
 				dockable: dockable,
 				closable: closable,
 				dockTo: this.dock,
+				titleIcon: titleIcon,
 				style: 'width:' + width + 'px; height:' + height + 'px; position:absolute; top:30px; left:120px; z-index:15'
 			}, paneDom);
 			pane.startup();
