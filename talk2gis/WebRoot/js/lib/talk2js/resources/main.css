@@ -96,6 +96,12 @@ html,body {
 	height: 16px;
 }
 
+.polygonIcon {
+	background: url(./images/contextmenu/polygon.png);
+	width: 16px;
+	height: 16px;
+}
+
 /* 地图鹰眼图 */
 .olControlOverviewMap .olControlOverviewMapElement {
 	padding: 3px;

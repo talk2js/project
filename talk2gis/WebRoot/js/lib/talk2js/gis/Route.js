@@ -84,7 +84,7 @@ define([
             }));
 			menu.addChild(new MenuItem({
                 label: "设置避让区",
-                iconClass: "zoomOutIcon",
+                iconClass: "polygonIcon",
                 onClick: lang.hitch(this, function (e) {
                 	menu.deactivateAll();
                 	// 初始化图层
