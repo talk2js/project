@@ -12,9 +12,10 @@ define([
 	"talk2js/gis/MapPane",
 	"app/PaneContainer",
 	"app/alarm/AlarmModule",
-	"app/poiquery/PoiQueryModule"
+	"app/poiquery/PoiQueryModule",
+	"app/drawgraph/DrawGraphModule"
 ], function(declare, lang, dom, domGeom, domStyle, registry, TabContainer, StackContainer, 
-		MapPane, PaneContainer, AlarmModule, PoiQueryModule) {
+		MapPane, PaneContainer, AlarmModule, PoiQueryModule, DrawGraphModule) {
 
 	return declare([], {
 
@@ -36,6 +37,9 @@ define([
 			
 			new AlarmModule();
 			new PoiQueryModule({
+				mapPane: mapPane
+			});
+			new DrawGraphModule({
 				mapPane: mapPane
 			});
 		}

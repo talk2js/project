@@ -26,6 +26,7 @@ define([ {
 	img : './images/2.png',
 	text : '地图编辑',
 	menuItems : [ {
+		id: "drawGraph",
 		iconClass : "commonIcons fourcolorWarningAssessment",
 		label : "绘图功能",
 		privilege : 'stalkingResource'

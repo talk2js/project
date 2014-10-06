@@ -262,6 +262,7 @@ define([
         },
         
         createFloatingPane: function(params){
+        	var id = params.id;
         	var title = params.title;
         	var width = params.width;
         	var height = params.height;
@@ -279,12 +280,13 @@ define([
         	var paneDom = domConstruct.create("div");
 			this.domNode.appendChild(paneDom);
 			var pane = new MapFloatingPane({
+				id: id,
 				title: title,
 				dockable: dockable,
 				closable: closable,
 				dockTo: this.dock,
 				titleIcon: titleIcon,
-				style: 'width:' + width + 'px; height:' + height + 'px; position:absolute; top:30px; left:120px; z-index:15'
+				style: 'width:' + width + 'px; height:' + height + 'px; position:absolute; top:30px; left:120px; z-index:15;'
 			}, paneDom);
 			pane.startup();
 			pane.bringToTop();
