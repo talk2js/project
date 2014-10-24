@@ -22,9 +22,9 @@ define([
 		
 		AVOIDREGION_LAYER_ID: "avoidRegionLayer",
 		
-		startImgPath: require.toUrl("./resources/images/start.png"),
+		startImgPath: require.toUrl("../resources/images/start.png"),
 		
-		endImgPath: require.toUrl("./resources/images/end.png"),
+		endImgPath: require.toUrl("../resources/images/end.png"),
 		
 		startMarker: null,
 		
@@ -169,7 +169,7 @@ define([
 			var startEndMarkerLayer = map.getLayer(this.STARTENDMARKER_LAYER_ID);
 			if(startEndMarkerLayer){
 				var lonlat = new OpenLayers.LonLat(point.lon, point.lat);
-				var size = new OpenLayers.Size(30, 30);
+				var size = new OpenLayers.Size(41, 34);
 				var offset = new OpenLayers.Pixel(-(size.w / 2), -size.h);
 				var icon;
 				if(isStart){
