@@ -46,7 +46,7 @@ define([
 			menu.addChild(new MenuSeparator());
 			menu.addChild(new MenuItem({
                 label: "设为起点",
-                iconClass: "zoomOutIcon",
+                iconClass: "startPointIcon",
                 onClick: lang.hitch(this, function (e) {
                 	menu.deactivateAll();
                 	// 初始化图层
@@ -65,7 +65,7 @@ define([
             }));
 			menu.addChild(new MenuItem({
                 label: "设为终点",
-                iconClass: "zoomOutIcon",
+                iconClass: "endPointIcon",
                 onClick: lang.hitch(this, function (e) {
                 	menu.deactivateAll();
                 	// 初始化图层

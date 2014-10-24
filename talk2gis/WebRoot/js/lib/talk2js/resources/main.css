@@ -102,6 +102,18 @@ html,body {
 	height: 16px;
 }
 
+.startPointIcon {
+	background: url(./images/contextmenu/start_point.png);
+	width: 16px;
+	height: 16px;
+}
+
+.endPointIcon {
+	background: url(./images/contextmenu/end_point.png);
+	width: 16px;
+	height: 16px;
+}
+
 /* 地图鹰眼图 */
 .olControlOverviewMap .olControlOverviewMapElement {
 	padding: 3px;
