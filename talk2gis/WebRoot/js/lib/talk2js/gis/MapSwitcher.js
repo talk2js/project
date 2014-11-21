@@ -16,7 +16,7 @@
     
 	return declare([_WidgetBase, _TemplatedMixin], {
 		
-        templateString: '<div style=\"position:absolute; top:40px; right:50px; width:21px; height:25px; z-index:100;\"></div>',
+        templateString: '<div style=\"position:absolute; top:40px; right:60px; width:21px; height:25px; z-index:100;\"></div>',
 
         map: null,
         
@@ -32,9 +32,9 @@
         
         lowIndex: 99,
         
-        imageWidth: 47,
+        imageWidth: 57,
 	
-		imageHeight: 47,
+		imageHeight: 57,
         
         postCreate: function () {
             this.inherited(arguments);
